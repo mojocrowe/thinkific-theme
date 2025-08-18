@@ -1,0 +1,105 @@
+{% unless page.current_url contains "/manage" %}
+  {% assign enrolled = false %}
+{% if section.settings.enable_button%}
+  {% for enrollment in site.current_user.enrollments %}
+    {% if section.settings.selected_course.course.name == enrollment.course_name and section.settings.selected_course.course.user_can_resume %}
+      {% assign enrolled = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if enrolled and page.current_url contains "/bundle" %}
+    <style>
+      .button-primary {
+        visibility: hidden;
+      }
+
+      .button-primary.disable-click {
+        pointer-events: none;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 🔒 Disable right-click on the entire page
+        document.addEventListener("contextmenu", function (e) {
+          e.preventDefault();
+        });
+
+        const maxAttempts = 100;
+        let attempts = 0;
+
+        const pollForButton = setInterval(function () {
+          const button = document.querySelector('.button-primary');
+
+          if (button) {
+            // Temporarily disable interaction
+            button.classList.add("disable-click");
+
+            // Set button text
+            button.textContent = "{{ section.settings.button_text | escape }}";
+
+            // Hide href and set link in data attribute
+            const hiddenHref = "{{ section.settings.button_link | escape }}";
+            button.removeAttribute("href");
+            button.setAttribute("data-hidden-href", hiddenHref);
+
+            // Custom click handler
+            button.addEventListener("click", function (e) {
+              e.preventDefault();
+              const url = button.getAttribute("data-hidden-href");
+              if (url) {
+                window.location.href = url;
+              }
+            });
+
+            // Reveal button and re-enable clicks
+            button.style.visibility = "visible";
+            button.classList.remove("disable-click");
+
+            clearInterval(pollForButton);
+          }
+
+          attempts++;
+          if (attempts > maxAttempts) {
+            console.warn("Button update failed: not found in time.");
+            clearInterval(pollForButton);
+          }
+        }, 100);
+      });
+    </script>
+  {% endif %}
+  {% endif %}
+{% endunless %}
+
+
+
+
+{% schema %}
+{
+  "label": "Button Swap",
+  "settings": [
+      {
+          "type": "checkbox",
+          "id": "enable_button",
+          "label": "Enable Button Switcher?",
+          "default": false
+        },
+    {
+          "type": "product_picker",
+          "id": "selected_course",
+          "label": "Select Course"
+        },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Resume Course"
+    },
+    {
+      "type": "page_picker",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ]
+}
+{% endschema %}

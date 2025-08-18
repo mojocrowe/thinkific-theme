@@ -1,0 +1,326 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif'],
+        },
+        colors: {
+          purple: {
+            50: '#f5f3ff',
+            100: '#ede9fe',
+            200: '#ddd6fe',
+            300: '#c4b5fd',
+            400: '#a78bfa',
+            500: '#8b5cf6',
+            600: '#7c3aed',
+            700: '#6d28d9',
+            800: '#5b21b6',
+            900: '#4c1d95',
+          },
+        },
+      },
+    },
+  }
+</script>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #111827;
+  }
+</style>
+
+<section id="pricing" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{{ section.settings.pricing_title }}</h2>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-8">{{ section.settings.pricing_description }}</p>
+
+    {%- comment -%}
+    Determine whether Plan 3 should be shown
+    {%- endcomment -%}
+    {% assign show_plan_3 = true %}
+    {% if section.settings.plan_3_required_product %}
+      {% assign show_plan_3 = false %}
+      {% if site.current_user %}
+        {% for enrollment in site.current_user.enrollments %}
+          {% if enrollment.course_id == section.settings.plan_3_required_product.id %}
+            {% assign show_plan_3 = true %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+
+    <div class="grid grid-cols-1 {% if show_plan_3 %}md:grid-cols-3{% else %}md:grid-cols-2 justify-center{% endif %} gap-8">
+      {% for i in (1..3) %}
+
+        {% if i == 3 and show_plan_3 == false %}
+          {% continue %}
+        {% endif %}
+
+        {% assign name_key = "plan_" | append: i | append: "_name" %}
+        {% assign summary_key = "plan_" | append: i | append: "_summary" %}
+        {% assign price_key = "plan_" | append: i | append: "_price" %}
+        {% assign features_key = "plan_" | append: i | append: "_features" %}
+        {% assign button_text_key = "plan_" | append: i | append: "_button_text" %}
+        {% assign button_link_key = "plan_" | append: i | append: "_button_link" %}
+        {% assign highlight_key = "plan_" | append: i | append: "_highlight" %}
+
+        {% assign name = section.settings[name_key] %}
+        {% assign summary = section.settings[summary_key] %}
+        {% assign price = section.settings[price_key] %}
+        {% assign features_string = section.settings[features_key] %}
+        {% assign features = features_string | newline_to_br | split: '<br />' %}
+        {% assign button_text = section.settings[button_text_key] %}
+        {% assign button_link = section.settings[button_link_key] %}
+        {% assign highlight = section.settings[highlight_key] %}
+
+        <div class="bg-white rounded-2xl border shadow-lg p-8 flex flex-col relative {% if highlight %}ring-2 md:-translate-y-4{% endif %}" style="{% if highlight %}border-color: {{ section.settings.badge_bg_color }}{% endif %}">
+          {% if highlight %}
+            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-4 py-1 rounded-full text-sm font-medium" style="background-color: {{ section.settings.badge_bg_color }}; color: {{ section.settings.badge_text_color }};">
+              {{ section.settings.badge_text }}
+            </div>
+          {% endif %}
+          <h3 class="text-xl font-bold text-gray-900 mb-2">{{ name }}</h3>
+          <p class="text-gray-600 mb-6">{{ summary }}</p>
+          <div class="mb-6">
+            <span class="text-4xl font-bold text-gray-900">${{ price }}</span>
+            <span class="text-gray-600 ml-2">/ month</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-left">
+            {% for feature in features %}
+              <li><i class="fa fa-check mr-2" style="color: {{ section.settings.checkmark_color }}"></i>{{ feature | strip }}</li>
+            {% endfor %}
+          </ul>
+          <a href="{{ button_link }}"
+             class="w-full py-3 font-medium text-center transition-colors duration-200"
+             style="background-color: {{ section.settings.button_bg_color }};
+                    color: {{ section.settings.button_text_color }};
+                    border-radius: {{ section.settings.button_border_radius }}px;"
+             onmouseover="this.style.backgroundColor='{{ section.settings.button_hover_bg_color }}';"
+             onmouseout="this.style.backgroundColor='{{ section.settings.button_bg_color }}';">
+            {{ button_text }}
+          </a>
+        </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+
+{% schema %}
+{
+  "label": "Pricing 3 Columns",
+  "settings": [
+    {
+      "label": "Pricing",
+      "settings": [
+        {
+          "type": "text",
+          "id": "pricing_title",
+          "label": "Pricing Title",
+          "default": "Simple, Transparent Pricing"
+        },
+        {
+          "type": "textarea",
+          "id": "pricing_description",
+          "label": "Pricing Description",
+          "default": "Choose the plan that's right for you and start connecting with musicians worldwide."
+        },
+        {
+          "type": "checkbox",
+          "id": "plan_1_highlight",
+          "label": "Highlight Plan 1 (Most Popular)",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "plan_1_name",
+          "label": "Plan 1 - Name",
+          "default": "Free"
+        },
+        {
+          "type": "textarea",
+          "id": "plan_1_summary",
+          "label": "Plan 1 - Summary",
+          "default": "Perfect for getting started"
+        },
+        {
+          "type": "text",
+          "id": "plan_1_price",
+          "label": "Plan 1 - Price",
+          "default": "0"
+        },
+        {
+          "type": "textarea",
+          "id": "plan_1_features",
+          "label": "Plan 1 - Features (one per line)",
+          "default": "Basic profile\nBrowse musicians\nUp to 3 projects\n1 message per day\nCommunity access"
+        },
+        {
+          "type": "text",
+          "id": "plan_1_button_text",
+          "label": "Plan 1 - Button Text",
+          "default": "Sign Up Free"
+        },
+        {
+          "type": "page_picker",
+          "id": "plan_1_button_link",
+          "label": "Plan 1 - Button Link",
+          "description": "────────────────────"
+        },
+        {
+          "type": "checkbox",
+          "id": "plan_2_highlight",
+          "label": "Highlight Plan 2 (Most Popular)",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "plan_2_name",
+          "label": "Plan 2 - Name",
+          "default": "Pro"
+        },
+        {
+          "type": "textarea",
+          "id": "plan_2_summary",
+          "label": "Plan 2 - Summary",
+          "default": "For serious musicians"
+        },
+        {
+          "type": "text",
+          "id": "plan_2_price",
+          "label": "Plan 2 - Price",
+          "default": "24.99"
+        },
+        {
+          "type": "textarea",
+          "id": "plan_2_features",
+          "label": "Plan 2 - Features (one per line)",
+          "default": "Enhanced profile\nAdvanced search filters\nUnlimited projects\nUnlimited messages\nProject collaboration tools\nEvent promotion"
+        },
+        {
+          "type": "text",
+          "id": "plan_2_button_text",
+          "label": "Plan 2 - Button Text",
+          "default": "Get Pro"
+        },
+        {
+          "type": "page_picker",
+          "id": "plan_2_button_link",
+          "label": "Plan 2 - Button Link",
+          "description": "────────────────────"
+        },
+        {
+          "type": "checkbox",
+          "id": "plan_3_highlight",
+          "label": "Highlight Plan 3 (Most Popular)",
+          "default": false
+        },
+        {
+  "type": "product_picker",
+  "id": "plan_3_required_product",
+  "label": "Plan 3 - Show Only If Enrolled In Course"
+},
+        {
+          "type": "text",
+          "id": "plan_3_name",
+          "label": "Plan 3 - Name",
+          "default": "Studio"
+        },
+        {
+          "type": "textarea",
+          "id": "plan_3_summary",
+          "label": "Plan 3 - Summary",
+          "default": "For professional studios"
+        },
+        {
+          "type": "text",
+          "id": "plan_3_price",
+          "label": "Plan 3 - Price",
+          "default": "49.99"
+        },
+        {
+          "type": "textarea",
+          "id": "plan_3_features",
+          "label": "Plan 3 - Features (one per line)",
+          "default": "Everything in Pro\nStudio profile page\nClient management\nBooking system\nAnalytics dashboard\nPriority support\nFeatured placement"
+        },
+        {
+          "type": "text",
+          "id": "plan_3_button_text",
+          "label": "Plan 3 - Button Text",
+          "default": "Get Studio"
+        },
+        {
+          "type": "page_picker",
+          "id": "plan_3_button_link",
+          "label": "Plan 3 - Button Link"
+        }
+      ]
+    },
+    {
+      "label": "Styling Options",
+      "settings": [
+        {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#e5e7eb"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Button Hover Background Color",
+      "default": "#d1d5db"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#111827"
+    },
+    {
+  "type": "text",
+  "id": "button_border_radius",
+  "label": "Button Border Radius (px)",
+  "default": 8
+},
+
+    {
+      "type": "color",
+      "id": "checkmark_color",
+      "label": "Checkmark Icon Color",
+      "default": "#7c3aed"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "\"Most Popular\" Badge Text",
+      "default": "Most Popular"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Badge Background Color",
+      "default": "#7c3aed"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge Text Color",
+      "default": "#ffffff"
+    }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

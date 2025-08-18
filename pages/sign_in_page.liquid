@@ -1,0 +1,42 @@
+{% comment %}
+  This is the sign in page.
+{% endcomment %}
+
+<main class="sign-in" id="main-content" role="main">
+	<section
+		class="banner section-background section-background-overlay section__content-alignment--center section--has-additional-prices banner___ff58b"
+		data-preview-item="banner"
+		data-section-uid="Allijdsx_"
+	>
+		<div class="banner__container banner__container--small">
+			<div class="banner__wrapper">
+				<article class="section__content section__content___ff58b">
+					<header class="section__headings section__headings___ff58b" style="margin: 0; text-align: center;">
+						<h2 class="section__heading section__heading___ff58b">WELCOME TO MOJO</h2>
+					</header>
+				</article>
+			</div>
+		</div>
+	</section>
+	<div class="sign-in__container">
+		<div class="sign-in__wrapper">{% section 'signin_form' %}</div>
+	</div>
+	{{ content_for_page }}
+</main>
+
+
+{% schema %}
+{
+  "sections":{
+    "options":[
+      "banner",
+      "course_cards",
+      "frequently_asked_questions",
+      "call_to_action",
+      "countdown",
+      "video"
+    ],
+    "defaults":[]
+  }
+}
+{% endschema %}

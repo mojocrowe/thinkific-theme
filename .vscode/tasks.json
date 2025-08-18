@@ -1,0 +1,31 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Bump version number",
+			"type": "shell",
+			"command": "jq '.info.version |= (split(\".\") | .[2] = ((.[2]|tonumber)+1|tostring) | join(\".\"))' manifest.json > manifest.tmp.json && mv manifest.tmp.json manifest.json",
+			"group": {
+				"kind": "build"
+			},
+			"presentation": {
+				"reveal": "silent"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Zip repository contents",
+			"type": "shell",
+			"command": "mkdir -p dist && zip -r dist/thinkific-theme.zip . -x '.git/*' '.vscode/*' '.gitignore' 'dist/*'",
+			"dependsOn": ["Bump version number"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "silent"
+			},
+			"problemMatcher": []
+		}
+	]
+}
