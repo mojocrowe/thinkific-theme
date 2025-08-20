@@ -7,10 +7,4 @@
   It is included near the bottom of the page.
 {% endcomment %}
 
-<script type="text/javascript" src="{{ 'script.min.js' | theme_asset_url }}">
-</script>
-
-<script>
-    // Renames "My Dashboard" link in navbar to "Programs"
-    document.querySelector(".header__nav-item.header__nav-item--default a[href='/enrollments']").textContent = "My Programs";
-</script>
+<script type="text/javascript" src="{{ 'script.min.js' | theme_asset_url }}"></script>
