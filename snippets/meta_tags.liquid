@@ -2,12 +2,23 @@
   Site-wide meta tags. These will be on every page in the site
 {% endcomment %}
 
+{% comment %} {% assign site_title = site.name %} {% endcomment %}
+{% assign site_title = 'Mojo Crowe' %}
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<link rel="apple-touch-icon" type="image/png" href="{% if theme.settings.favicon != blank %}{{ theme.settings.favicon }}{% else %}https://cdn.thinkific.com/51/20180809/f1a1de9d3260c96d3a81ee781bc9808e.ico{% endif %}">
-<link rel="icon" type="image/png" href="{% if theme.settings.favicon != blank %}{{ theme.settings.favicon }}{% else %}https://cdn.thinkific.com/51/20180809/f1a1de9d3260c96d3a81ee781bc9808e.ico{% endif %}">
+<link
+  rel="apple-touch-icon"
+  type="image/png"
+  href="{% if theme.settings.favicon != blank %}{{ theme.settings.favicon }}{% else %}https://cdn.thinkific.com/51/20180809/f1a1de9d3260c96d3a81ee781bc9808e.ico{% endif %}"
+>
+<link
+  rel="icon"
+  type="image/png"
+  href="{% if theme.settings.favicon != blank %}{{ theme.settings.favicon }}{% else %}https://cdn.thinkific.com/51/20180809/f1a1de9d3260c96d3a81ee781bc9808e.ico{% endif %}"
+>
 
 {% for meta in page.meta %}
   {{ meta.tag }}
@@ -37,10 +48,10 @@
 {% case page.page_identifier %}
   {% when 'home_landing_page' %}
     {% if page.seo_title == blank %}
-      <title>{{ site.name }}</title>
+      <title>{{ site_title }}</title>
     {% endif %}
 
-  {% when 'course_landing_page' or 'bundle_landing_page' or 'community_landing_page' %}
+  {% when 'course_landing_page', 'bundle_landing_page', 'community_landing_page' %}
     {% if page.is_hidden %}
       <meta name="robots" content="noindex">
     {% endif %}
@@ -51,92 +62,195 @@
     {% endif %}
 
   {% when 'coming_soon_page' %}
-    <title>{{ 'liquid.partials.dashboard_course_card.coming_soon' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.dashboard_course_card.coming_soon' | translate }}
+      -
+      {{ site_title }}
+    </title>
     <meta name="description" content="&nbsp;">
 
   {% when 'student_certificate_page' %}
-    <title>{{ 'liquid.partials.student_certificate.certificate_id' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.student_certificate.certificate_id' | translate }}
+      -
+      {{ site_title }}
+    </title>
     <meta name="og:image" content="{{ page.credential_image_url }}">
     <meta name="twitter:image" content="{{ page.credential_image_url }}">
     <meta name="twitter:title" content="Check out my new certification!">
 
   {% when 'collections_landing_page' %}
     {% if page.seo_title == blank %}
-      <title>{{ 'liquid.partials.header_with_links.link_all_products' | translate }} - {{ site.name }}</title>
+      <title>
+        {{ 'liquid.partials.header_with_links.link_all_products' | translate }}
+        -
+        {{ site_title }}
+      </title>
     {% endif %}
 
   {% when 'collection_landing_page' %}
 
   {% when 'sign_in_page' %}
     {% if page.seo_title == blank %}
-      <title>{{ 'liquid.partials.header.link_sign_in' | translate }} - {{ site.name }}</title>
+      <title>
+        {{ 'liquid.partials.header.link_sign_in' | translate }}
+        -
+        {{ site_title }}
+      </title>
     {% endif %}
 
   {% when 'sign_up_page' %}
     {% if page.seo_title == blank %}
-      <title>{{ 'liquid.views.sign_up_page.header_create_account' | translate }} - {{ site.name }}</title>
+      <title>
+        {{ 'liquid.views.sign_up_page.header_create_account' | translate }}
+        -
+        {{ site_title }}
+      </title>
     {% endif %}
 
   {% when 'student_dashboard' %}
-    <title>{{ 'liquid.partials.header.link_my_dashboard' | translate }} - {{ site.name }}</title>
+    <title>
+      My Programs -
+      {{ site_title }}
+    </title>
 
   {% when 'privacy_policy_page' %}
-    <title>{{ 'liquid.partials.footer.link_privacy_policy' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.footer.link_privacy_policy' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'terms_of_use_page' %}
-    <title>{{ 'liquid.partials.footer.link_terms' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.footer.link_terms' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'checkout_page' %}
-    <title>{{ 'liquid.partials.checkout_form.header_complete_your_purchase' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.checkout_form.header_complete_your_purchase' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'checkout_thankyou_page' %}
-    <title>{{ 'liquid.partials.checkout_thankyou.header_thanks' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.checkout_thankyou.header_thanks' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'paypal_confirm_page' %}
-    <title>{{ 'liquid.views.my_account_orders_shared.paypal' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.views.my_account_orders_shared.paypal' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'checkout_signin_signup_page' %}
-    <title>{{ 'layouts.custom_site_themes.checkout_form.list_item_2' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'layouts.custom_site_themes.checkout_form.list_item_2' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'my_account_billings_page' %}
-    <title>{{ 'liquid.partials.my_account_menu.custom_billing' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.my_account_menu.custom_billing' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'my_account_certificates_page' %}
-    <title>{{ 'liquid.partials.my_account_menu.custom_certificates' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.my_account_menu.custom_certificates' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'my_account_credit_card_page' %}
-    <title>{{ 'liquid.views.my_account_credit_card_page.header_title' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.views.my_account_credit_card_page.header_title' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'my_account_notifications_page' %}
-    <title>{{ 'liquid.partials.my_account_menu.custom_notifications' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.my_account_menu.custom_notifications' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'my_account_order_page' %}
-    <title>{{ 'liquid.partials.checkout_overview.header_your_order' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.checkout_overview.header_your_order' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'my_account_order_list_page' %}
-    <title>{{ 'liquid.partials.my_account_menu.custom_order_history' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.my_account_menu.custom_order_history' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'my_account_password_page' %}
-    <title>{{ 'liquid.partials.my_account_menu.custom_password' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.my_account_menu.custom_password' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'my_account_page' %}
-    <title>{{ 'liquid.views.my_account_page.header_your_profile' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.views.my_account_page.header_your_profile' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'sign_out_page' %}
-    <title>{{ 'liquid.partials.header.link_sign_out' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.header.link_sign_out' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
-  {% when 'new_course_review_page' or 'edit_course_review_page' %}
-    <title>{{ 'liquid.partials.dashboard_course_card.link_rate_course' | translate }} - {{ site.name }}</title>
+  {% when 'new_course_review_page', 'edit_course_review_page' %}
+    <title>
+      {{ 'liquid.partials.dashboard_course_card.link_rate_course' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'affiliate_index_page' %}
-    <title>{{ 'liquid.partials.affiliate_dashboard_menu.link_general_affiliate_information' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.affiliate_dashboard_menu.link_general_affiliate_information' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'affiliate_links_page' %}
-    <title>{{ 'liquid.partials.affiliate_dashboard_menu.link_affiliate_links' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.affiliate_dashboard_menu.link_affiliate_links' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'affiliate_reports_page' %}
-    <title>{{ 'liquid.partials.affiliate_dashboard_menu.link_financial_reports' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.affiliate_dashboard_menu.link_financial_reports' | translate }}
+      -
+      {{ site_title }}
+    </title>
 
   {% when 'affiliate_settings_page' %}
-    <title>{{ 'liquid.partials.affiliate_dashboard_menu.link_settings' | translate }} - {{ site.name }}</title>
+    <title>
+      {{ 'liquid.partials.affiliate_dashboard_menu.link_settings' | translate }}
+      -
+      {{ site_title }}
+    </title>
 {% endcase %}
