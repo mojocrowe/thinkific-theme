@@ -1,97 +1,99 @@
-
 // Student dashboard styling
 // Card headings
 .kapow-card-content .card-heading {
-    text-transform: uppercase;
-    font-family: "PPNeueMontreal";
-    font-weight: 700;
-    font-size: 15px;
+	text-transform: uppercase;
+	font-family: "PPNeueMontreal";
+	font-weight: 700;
+	font-size: 15px;
 }
 // Card description
 .kapow-card-content .card-description {
-    font-family: "Concrette M";
-    font-weight: 100;
-    font-size: 12px;
+	font-family: "Concrette M";
+	font-weight: 100;
+	font-size: 12px;
+}
+
+.kapow-spa {
+	background-color: $body__background-color;
 }
 
 // Learning pathway header
 .kapow-spt {
-    h1 {
-        text-transform: uppercase;
-        font-family: "PPNeueMontreal";
-        font-weight: 700;
-        font-size: 40px;
-    }
-    
-    h4.content-text.leading-7 {
-        text-transform: uppercase;
-        font-family: "PPNeueMontreal";
-        font-weight: 700;
-        font-size: 24px !important;
-    }
-    
-    p, div.col-md-6.col-sm-12 {
-        font-family: "Concrette M";
-        font-weight: 100;
-        font-size: 16px !important;
-    }
-    
-    h2 {
-        font-family: "Concrette M";
-        font-size: 16px !important;
-    }
-    
-    //Hide the earn your certificate panel
-    .main-section {
-        section:last-child {
-            // This is the last module above the certificate.
-            // We need to remove the last dotted journey line.
-            .container {
-                & > div:nth-last-child(2) {
-                    & > div:first-child {
-                        & > div:last-child {
-                            border: none !important;
-                        }
-                    }
-                }
-                // This is the certificate message panel to be removed
-                & > div:last-child {
-                    display: none !important;
-                }
-            }
-        }
-    }
+	h1 {
+		text-transform: uppercase;
+		font-family: "PPNeueMontreal";
+		font-weight: 700;
+		font-size: 40px;
+	}
+
+	h4.content-text.leading-7 {
+		text-transform: uppercase;
+		font-family: "PPNeueMontreal";
+		font-weight: 700;
+		font-size: 24px !important;
+	}
+
+	p,
+	div.col-md-6.col-sm-12 {
+		font-family: "Concrette M";
+		font-weight: 100;
+		font-size: 16px !important;
+	}
+
+	h2 {
+		font-family: "Concrette M";
+		font-size: 16px !important;
+	}
+
+	//Hide the earn your certificate panel
+	.main-section {
+		section:last-child {
+			// This is the last module above the certificate.
+			// We need to remove the last dotted journey line.
+			.container {
+				& > div:nth-last-child(2) {
+					& > div:first-child {
+						& > div:last-child {
+							border: none !important;
+						}
+					}
+				}
+				// This is the certificate message panel to be removed
+				& > div:last-child {
+					display: none !important;
+				}
+			}
+		}
+	}
 }
 
 // Page banners
 .banner__wrapper {
-    .section__heading {
-        margin-bottom: 0;
-    }
+	.section__heading {
+		margin-bottom: 0;
+	}
 }
 
 .sign-in-page {
-    background-color: #ffffff;
+	background-color: #ffffff;
 }
 
 .button-primary {
-    border-radius: 0;
-    background-color: rgba(34, 34, 238, 1);
-    box-shadow: 4px 4px rgba(119, 221, 153, 1);
-    padding: 0.625rem 1.25rem;
-    text-transform: uppercase;
-    font-family: "PPNeueMontreal";
-    font-weight: 500 !important;
-    text-decoration: none !important;
-    color: #fff !important;
-    text-align: center;
-    width: fit-content;
-    height: fit-content;
+	border-radius: 0;
+	background-color: rgba(34, 34, 238, 1);
+	box-shadow: 4px 4px rgba(119, 221, 153, 1);
+	padding: 0.625rem 1.25rem;
+	text-transform: uppercase;
+	font-family: "PPNeueMontreal";
+	font-weight: 500 !important;
+	text-decoration: none !important;
+	color: #fff !important;
+	text-align: center;
+	width: fit-content;
+	height: fit-content;
 }
 
 .button-primary:hover {
-    background-color: rgba(119, 221, 153, 1);
-    box-shadow: 4px 4px rgba(34, 34, 238, 1);
+	background-color: rgba(119, 221, 153, 1);
+	box-shadow: 4px 4px rgba(34, 34, 238, 1);
 }
-
-

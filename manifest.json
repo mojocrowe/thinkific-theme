@@ -2,7 +2,7 @@
   "info": {
     "name": "Mojo Crowe",
     "author": "Mojo Crowe",
-    "version": "1.0.25",
+    "version": "1.0.26",
     "documentation_url": "https://mojocrowe.com/",
     "support_url": "https://mojocrowe.com/"
   },
@@ -134,7 +134,7 @@
           "type": "select",
           "id": "primary_button_shape",
           "label": "Button shape",
-          "default": "rounded",
+          "default": "square",
           "options": [
             {
               "value": "square",
@@ -368,7 +368,7 @@
           "type": "select",
           "id": "banner_size_desktop",
           "label": "Size",
-          "default": "52px",
+          "default": "40px",
           "options": [
             {
               "value": "14px",
@@ -444,7 +444,7 @@
           "type": "select",
           "id": "banner_weight",
           "label": "Weight",
-          "default": "100",
+          "default": "700",
           "options": [
             {
               "value": "100",
@@ -484,7 +484,7 @@
           "type": "font_select",
           "id": "heading_font",
           "label": "Font",
-          "default": "Concrette M",
+          "default": "PPNeueMontreal",
           "options": [
             {
               "value": "Abel",
@@ -617,7 +617,7 @@
           "type": "select",
           "id": "heading_size_desktop",
           "label": "Size",
-          "default": "36px",
+          "default": "40px",
           "options": [
             {
               "value": "14px",
@@ -1917,7 +1917,7 @@
         "menu_link_color": "#212326",
         "menu_floating_link_color": "#212326",
         "background_color": "#FFFFFF",
-        "background_color_2": "#F8F2E9",
+        "background_color_2": "#F8F8FF",
         "background_color_3": "#89AFB3",
         "card_background_color": "#FFFFFF",
         "card_background_hover_color": "#F8F2E9",
@@ -1928,12 +1928,12 @@
         "primary_button_outline_color": "#1E1C27",
         "primary_button_text_color": "#FFFFFF",
         "primary_button_style": "solid",
-        "primary_button_shape": "pill",
+        "primary_button_shape": "square",
         "secondary_button_background_color": "#FCF5EC",
         "secondary_button_outline_color": "#1E1C27",
         "secondary_button_text_color": "#1E1C27",
         "secondary_button_style": "outline",
-        "secondary_button_shape": "pill",
+        "secondary_button_shape": "square",
         "accent_color": "#212326",
         "banner_font": "PPNeueMontreal",
         "banner_size_desktop": "40px",
