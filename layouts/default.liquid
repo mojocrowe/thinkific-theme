@@ -2,7 +2,7 @@
   The default theme page layout
 {% endcomment %}
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{site.locale}}">
   <head>
     {{ required_header_content }}
@@ -18,9 +18,5 @@
     {% include 'site_wide_script' %}
     {% include 'theme_wide_script' %}
     <div class="overlay"></div>
-    <script>
-    document.querySelector("#player-wrapper > div > nav").style = "background-color: red";
-    console.log("TESTING SITE WIDE SCRIPT")
-</script>
   </body>
 </html>

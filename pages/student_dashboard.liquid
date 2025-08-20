@@ -5,24 +5,24 @@
 {% endcomment %}
 
 <script>
-(function () {
-  const referrer = document.referrer;
-  const redirectPath = sessionStorage.getItem('preScormPageTemp');
+  (function () {
+    const referrer = document.referrer;
+    const redirectPath = sessionStorage.getItem('preScormPageTemp');
 
-  // If the user came from SCORM and we have a stable redirect path that isn't the dashboard
-  if (
-    referrer.includes('/scorm-player/') &&
-    window.location.pathname === '/enrollments' &&
-    redirectPath &&
-    redirectPath !== '/enrollments'
-  ) {
-    // Optional: prevent infinite redirect loops
-    if (!sessionStorage.getItem('scormRedirected')) {
-      sessionStorage.setItem('scormRedirected', 'true');
-      window.location.href = redirectPath;
+    // If the user came from SCORM and we have a stable redirect path that isn't the dashboard
+    if (
+      referrer.includes('/scorm-player/') &&
+      window.location.pathname === '/enrollments' &&
+      redirectPath &&
+      redirectPath !== '/enrollments'
+    ) {
+      // Optional: prevent infinite redirect loops
+      if (!sessionStorage.getItem('scormRedirected')) {
+        sessionStorage.setItem('scormRedirected', 'true');
+        window.location.href = redirectPath;
+      }
     }
-  }
-})();
+  })();
 </script>
 
 <main class="student-dashboard" id="main-content" role="main">
@@ -30,20 +30,11 @@
   {{ content_for_page }}
 </main>
 
-
-
 {% schema %}
 {
-  "sections":{
-    "options":[
-      "banner",
-      "course_cards",
-      "frequently_asked_questions",
-      "call_to_action",
-      "countdown",
-      "video"
-    ],
-    "defaults":[]
+  "sections": {
+    "options": ["banner", "course_cards", "frequently_asked_questions", "call_to_action", "countdown", "video"],
+    "defaults": ["banner"]
   }
 }
 {% endschema %}
