@@ -1,3 +1,25 @@
+{% if section.settings.banner_enabled %}
+  <section
+    class="banner section-background section-background-overlay section__content-alignment--left section--has-additional-prices banner___6ca73"
+    data-preview-item="banner"
+    data-section-uid="sQaqaFHSF"
+  >
+    <div class="banner__container banner__container--small">
+      <div class="banner__wrapper">
+        <article class="section__content section__content___6ca73">
+          <header class="section__headings">
+            <h2 class="section__heading section__heading___6ca73">
+              {{ section.settings.banner_heading_text | upcase }}
+            </h2>
+
+            <p class="section__subheading section__subheading___6ca73">{{ section.settings.banner_subheading_text }}</p>
+          </header>
+        </article>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
 {% style %}
   .student-dashboard__content {
     {% include 'section_style_card_alignment' %}
@@ -7,26 +29,27 @@
 {% schema %}
 {
   "label": "Default",
-  "description": "This is a default section — the foundation of your Thinkific site.  While this section has limited customization, you can build out this page by adding new sections.",
   "settings": [
     {
-      "type": "radio",
-      "id": "card_alignment",
-      "label": "Card alignment",
-      "description": "",
-      "default": "left",
-      "options": [
+      "label": "Banner",
+      "settings": [
         {
-          "value": "left",
-          "label": "Left"
+          "type": "checkbox",
+          "id": "banner_enabled",
+          "label": "Show student dashboard banner",
+          "default": true
         },
         {
-          "value": "center",
-          "label": "Center"
+          "type": "text",
+          "id": "banner_heading_text",
+          "label": "Heading text",
+          "default": "My programs"
         },
         {
-          "value": "right",
-          "label": "Right"
+          "type": "text",
+          "id": "banner_subheading_text",
+          "label": "Subheading text",
+          "default": "What are you looking to learn today?"
         }
       ]
     }
