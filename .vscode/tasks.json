@@ -16,7 +16,7 @@
 		{
 			"label": "Zip repository contents",
 			"type": "shell",
-			"command": "mkdir -p dist && zip -r dist/thinkific-theme.zip . -x '.git/*' '.vscode/*' '.gitignore' 'dist/*'",
+			"command": "mkdir -p dist && zip -r dist/thinkific-theme.zip . -x '.git/*' '.vscode/*' '.gitignore' 'dist/*' '.theme-check.yml'",
 			"dependsOn": ["Bump version number"],
 			"group": {
 				"kind": "build",
