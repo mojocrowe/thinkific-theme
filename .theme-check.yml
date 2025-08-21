@@ -1,4 +1,6 @@
 DeprecatedTag:
   enabled: false
+TranslationKeyExists:
+  enabled: false
 ValidSchema:
   enabled: false
