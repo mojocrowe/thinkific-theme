@@ -2,37 +2,37 @@
 // ======================================
 
 .student-dashboard {
-  background-color: $body__background-color-2;
+	background-color: $body__background-color;
 }
 
 .student-dashboard__container {
-  @include make-container;
-  @include page-padding;
+	@include make-container;
+	@include page-padding;
 }
 
 .student-dashboard__banner {
-  background-color: $body__background-color;
+	background-color: $body__background-color;
 
-  .section__heading {
-    margin-bottom: 0;
-  }
+	.section__heading {
+		margin-bottom: 0;
+	}
 }
 
 .student-dashboard__form {
-  .form__group {
-    @include justify-content(space-between);
+	.form__group {
+		@include justify-content(space-between);
 
-    margin-right: 0;
-    margin-left: 0;
-  }
+		margin-right: 0;
+		margin-left: 0;
+	}
 
-  .form__select-no-label {
-    @include flex-grow(0);
+	.form__select-no-label {
+		@include flex-grow(0);
 
-    .form__control {
-      border: 0;
-      background-color: transparent;
-      direction: rtl;
-    }
-  }
+		.form__control {
+			border: 0;
+			background-color: transparent;
+			direction: rtl;
+		}
+	}
 }
