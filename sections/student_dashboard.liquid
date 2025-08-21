@@ -1,6 +1,6 @@
 {% if section.settings.banner_enabled %}
   <section
-    class="banner section-background section-background-overlay section__content-alignment--left section--has-additional-prices banner___6ca73"
+    class="banner student-dashboard__banner section-background section-background-overlay section__content-alignment--left section--has-additional-prices banner___6ca73"
     data-preview-item="banner"
     data-section-uid="sQaqaFHSF"
   >
@@ -21,8 +21,8 @@
 {% endif %}
 
 {% style %}
-  .student-dashboard__content {
-    {% include 'section_style_card_alignment' %}
+  .student-dashboard__banner {
+    {% include 'section_style_background_color' %}
   }
 {% endstyle %}
 
@@ -38,6 +38,27 @@
           "id": "banner_enabled",
           "label": "Show student dashboard banner",
           "default": true
+        },
+        {
+          "type": "select",
+          "id": "background_color",
+          "label": "Background color",
+          "description": "<small>Set your colors in Theme Settings</small>",
+          "default": "background_2",
+          "options": [
+            {
+              "value": "background_1",
+              "label": "Primary"
+            },
+            {
+              "value": "background_2",
+              "label": "Secondary"
+            },
+            {
+              "value": "background_3",
+              "label": "Tertiary"
+            }
+          ]
         },
         {
           "type": "text",
