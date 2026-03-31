@@ -33,6 +33,14 @@
           aria-controls="header-dropdown-menu"
         >
           {{ site.current_user.full_name }}
+          <img
+            src="{{ site.current_user.avatar }}"
+            srcset="{{ site.current_user.avatar }}?width=32&dpr=1 1x, {{ site.current_user.avatar }}?width=32&dpr=2 2x, {{ site.current_user.avatar }}?width=32&dpr=3 3x"
+            aria-hidden="true"
+            class="header__user-avatar"
+            loading="lazy"
+            alt=""
+          >
           <i class="fa fa-caret-down" aria-hidden="true"></i>
         </button>
         {% include 'header_user_menu' %}
