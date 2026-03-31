@@ -41,7 +41,7 @@
           aria-expanded="false"
           aria-controls="header-dropdown-menu"
         >
-          {{ site.current_user.full_name }}
+          {{ site.current_user.first_name }}
           <img
             src="{{ site.current_user.avatar }}"
             srcset="{{ site.current_user.avatar }}?width=32&dpr=1 1x, {{ site.current_user.avatar }}?width=32&dpr=2 2x, {{ site.current_user.avatar }}?width=32&dpr=3 3x"
