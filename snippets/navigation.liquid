@@ -21,6 +21,15 @@
   "
 >
   <ul>
+    {% if site.current_user.signed_in %}
+      {% if site.current_user.can_access_admin_dashboard %}
+        <li class="header__nav-item">
+          <a href="{{ site.dashboard_url }}">
+            {{ 'liquid.partials.header_user_menu.link_admin' | translate }}
+          </a>
+        </li>
+      {% endif %}
+    {% endif %}
     {% include 'header_links' %}
     {% include 'header_default_links' %}
     {% if site.current_user.signed_in %}
