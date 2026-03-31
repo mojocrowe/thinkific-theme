@@ -13,9 +13,7 @@
       </li>
     {% endif %}
     <li class="dropdown__menu-item {% if section.settings.show_dashboard_link %} header__nav-item--default {% endif %}">
-      <a href="{{ site.student_dashboard_url }}">
-        {{ 'liquid.partials.header_with_links.link_my_dashboard' | translate }}
-      </a>
+      <a href="{{ site.student_dashboard_url }}"> My Programs </a>
     </li>
     {% if site.current_user.is_affiliate %}
       <li class="dropdown__menu-item">
