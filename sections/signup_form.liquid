@@ -26,7 +26,9 @@
             name="{{ field.name }}"
             value="{{ field.value }}"
             placeholder="{{ field.placeholder }}"
-            {% if field.required %}required{% endif %}
+            {% if field.required %}
+              required
+            {% endif %}
             autocapitalize="off"
             autocomplete="off"
             autocorrect="off"
@@ -57,7 +59,9 @@
             name="{{ field.name }}"
             value="{{ field.value }}"
             placeholder="{{ field.placeholder }}"
-            {% if field.required %}required{% endif %}
+            {% if field.required %}
+              required
+            {% endif %}
             autocapitalize="off"
             autocomplete="off"
             autocorrect="off"
@@ -91,7 +95,9 @@
           name="{{ field.name }}"
           value="{{ field.value }}"
           placeholder="{{ field.placeholder }}"
-          {% if field.required %}required{% endif %}
+          {% if field.required %}
+            required
+          {% endif %}
           autocapitalize="off"
           autocomplete="off"
           autocorrect="off"
@@ -123,7 +129,9 @@
           id="{{ field.name }}"
           name="{{ field.name }}"
           placeholder="{{ field.placeholder }}"
-          {% if field.required %}required{% endif %}
+          {% if field.required %}
+            required
+          {% endif %}
           autocapitalize="off"
           autocomplete="off"
           autocorrect="off"
@@ -152,7 +160,9 @@
             <select
               id="{{ field.name }}"
               name="{{ field.name }}"
-              {% if field.required %}required aria-describedby="custom-select-error"{% endif %}
+              {% if field.required %}
+                required aria-describedby="custom-select-error"
+              {% endif %}
               class="form__control custom-select"
             >
               <option value="" disabled selected>
@@ -180,7 +190,9 @@
             name="{{ field.name }}"
             value="{{ field.value }}"
             placeholder="{{ field.label }}"
-            {% if field.required %}required aria-describedby="custom-field-error"{% endif %}
+            {% if field.required %}
+              required aria-describedby="custom-field-error"
+            {% endif %}
             class="form__control custom-field"
           />
 
@@ -237,7 +249,9 @@
       This CSS hidden input is necessary to stop spam bots from creating student accounts.
     {% endcomment %}
     <div class="form__group honeypot-field">
-      <label aria-hidden="true" for="confirm-email">{{ 'liquid.views.sign_up_page.honeypot_field_label' | translate }}</label>
+      <label aria-hidden="true" for="confirm-email">
+        {{- 'liquid.views.sign_up_page.honeypot_field_label' | translate -}}
+      </label>
       <input aria-hidden="true" type="text" name="confirm-email" id="confirm-email" autocomplete="off" tabindex="-1">
     </div>
 
@@ -262,7 +276,7 @@
 
 {% unless page.is_social_sign_up_step_two %}
   <aside class="sign-up__sign-in">
-    <a href='{{ page.sign_in_url }}'>
+    <a href="{{ page.sign_in_url }}">
       {{ 'liquid.views.sign_up_page.link_sign_in' | translate }}
     </a>
   </aside>
@@ -272,8 +286,8 @@
 
 {% schema %}
 {
-  "label":"Default",
-  "description":"This is a default section — the foundation of your Thinkific site.  While this section is not editable, you can customize this page by adding new sections.",
-  "settings":[]
+  "label": "Default",
+  "description": "This is a default section — the foundation of your Thinkific site.  While this section is not editable, you can customize this page by adding new sections.",
+  "settings": []
 }
 {% endschema %}

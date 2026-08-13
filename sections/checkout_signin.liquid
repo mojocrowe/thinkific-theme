@@ -35,7 +35,9 @@
           autocomplete="off"
           autocorrect="off"
           spellcheck="false"
-          {% if field.required %}required{% endif %}
+          {% if field.required %}
+            required
+          {% endif %}
           class="form__control"
         />
       </div>
@@ -54,7 +56,9 @@
           autocomplete="off"
           autocorrect="off"
           spellcheck="false"
-          {% if field.required %}required{% endif %}
+          {% if field.required %}
+            required
+          {% endif %}
           class="form__control"
         />
       </div>
@@ -125,7 +129,9 @@
               name="{{ field.name }}"
               value="{{ field.value }}"
               placeholder="{{ field.placeholder }}"
-              {% if field.required %}required{% endif %}
+              {% if field.required %}
+                required
+              {% endif %}
               autocapitalize="off"
               autocomplete="off"
               autocorrect="off"
@@ -144,7 +150,9 @@
               name="{{ field.name }}"
               value="{{ field.value }}"
               placeholder="{{ field.placeholder }}"
-              {% if field.required %}required{% endif %}
+              {% if field.required %}
+                required
+              {% endif %}
               autocapitalize="off"
               autocomplete="off"
               autocorrect="off"
@@ -167,7 +175,9 @@
             name="{{ field.name }}"
             value="{{ field.value }}"
             placeholder="{{ field.placeholder }}"
-            {% if field.required %}required{% endif %}
+            {% if field.required %}
+              required
+            {% endif %}
             autocapitalize="off"
             autocomplete="off"
             autocorrect="off"
@@ -188,7 +198,9 @@
             id="{{ field.name }}"
             name="{{ field.name }}"
             placeholder="{{ field.placeholder }}"
-            {% if field.required %}required{% endif %}
+            {% if field.required %}
+              required
+            {% endif %}
             autocapitalize="off"
             autocomplete="off"
             autocorrect="off"
@@ -206,7 +218,14 @@
               <label for="{{ field.name }}" class="form__label">
                 {{ field.label }}
               </label>
-              <select id="{{ field.name }}" name="{{ field.name }}" {% if field.required %}required{% endif %} class="form__control">
+              <select
+                id="{{ field.name }}"
+                name="{{ field.name }}"
+                {% if field.required %}
+                  required
+                {% endif %}
+                class="form__control"
+              >
                 {{ field.country_options }}
               </select>
             </div>
@@ -220,7 +239,9 @@
               name="{{ field.name }}"
               value="{{ field.value }}"
               placeholder="{{ field.label }}"
-              {% if field.required %}required{% endif %}
+              {% if field.required %}
+                required
+              {% endif %}
               class="form__control"
             />
           {% endif %}
@@ -240,7 +261,8 @@
               id="{{ field.name }}"
               name="{{ field.name }}"
               value="{{ field.value }}"
-              required class="form__control"
+              required
+              class="form__control"
             />
             <label for="{{ field.name }}">
               {{ field.label }}
@@ -253,7 +275,9 @@
         This CSS hidden input is necessary to stop spam bots from creating student accounts.
       {% endcomment %}
       <div class="form__group honeypot-field">
-        <label aria-hidden="true" for="confirm-email">{{ 'liquid.views.sign_up_page.honeypot_field_label' | translate }}</label>
+        <label aria-hidden="true" for="confirm-email">
+          {{- 'liquid.views.sign_up_page.honeypot_field_label' | translate -}}
+        </label>
         <input aria-hidden="true" type="text" name="confirm-email" id="confirm-email" autocomplete="off" tabindex="-1">
       </div>
 
@@ -279,8 +303,8 @@
 
 {% schema %}
 {
-  "label":"Default",
-  "description":"This is a default section — the foundation of your Thinkific site.  While this section is not editable, you can customize this page by adding new sections.",
-  "settings":[]
+  "label": "Default",
+  "description": "This is a default section — the foundation of your Thinkific site.  While this section is not editable, you can customize this page by adding new sections.",
+  "settings": []
 }
 {% endschema %}

@@ -10,7 +10,10 @@
 {% assign theme_fonts = theme_fonts_str | strip_newlines | split: ',' | compact | uniq %}
 
 {% for font in theme_fonts %}
-  <link href="https://fonts.googleapis.com/css?family={{ font | strip }}:100,200,300,400,400i,500,600,700,800,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family={{ font | strip }}:100,200,300,400,400i,500,600,700,800,900&display=swap"
+    rel="stylesheet"
+  >
 {% endfor %}
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">

@@ -4,10 +4,12 @@
 {% endcomment %}
 
 {% assign course = page.course %}
-<div class="
-  product-action-buttons__purchase
-  {% if course.additional_prices != empty %}product-action-buttons--has-additional-prices{% endif %}
-">
+<div
+  class="
+    product-action-buttons__purchase
+    {% if course.additional_prices != empty %}product-action-buttons--has-additional-prices{% endif %}
+  "
+>
   {% if course.user_can_resume %}
     {% if course.user_enrollment_complete %}
       <a href="{{ course.links.resume }}" class="button button-secondary">
@@ -37,9 +39,13 @@
   {% if course.is_public %}
     {% if course.is_free and course.user_is_enrolled == false %}
       {% if course.is_presell %}
-        <a href="{{ course.links.enroll_free }}" class="button button-primary">{{ 'liquid.partials.course_landing_page_action_buttons.link_preorder_now' | translate }}</a>
+        <a href="{{ course.links.enroll_free }}" class="button button-primary">
+          {{- 'liquid.partials.course_landing_page_action_buttons.link_preorder_now' | translate -}}
+        </a>
       {% else %}
-        <a href="{{ course.links.enroll_free }}" class="button button-primary" data-qa="enroll-free__btn">{{ 'liquid.partials.course_landing_page_action_buttons.link_enroll_free' | translate }}</a>
+        <a href="{{ course.links.enroll_free }}" class="button button-primary" data-qa="enroll-free__btn">
+          {{- 'liquid.partials.course_landing_page_action_buttons.link_enroll_free' | translate -}}
+        </a>
       {% endif %}
     {% endif %}
 
@@ -77,7 +83,8 @@
       {% if course.has_free_trial %}
         <a
           href="{{ course.links.enroll_free_trial }}"
-          class="button{% unless course.user_can_purchase %} button-primary{% else %} button-secondary{% endunless %} button-free-trial" data-qa="enroll-free-trial__btn"
+          class="button{% unless course.user_can_purchase %} button-primary{% else %} button-secondary{% endunless %} button-free-trial"
+          data-qa="enroll-free-trial__btn"
         >
           {{ 'liquid.partials.course_landing_page_action_buttons.link_free_trial' | translate }}
         </a>
@@ -88,8 +95,15 @@
       <p class="product-action-button--private">
         <i class="fa fa-lock" aria-hidden="true"></i>
         <a href="mailto:{{ site.support_email }}" target="_blank">
-          {{ 'liquid.partials.course_landing_page_action_buttons.private_course_cta_text' | translate: site_support_email: site.support_email }}
-          <i class='fa fa-external-link' role='img' aria-label="{{ 'liquid.accessibility.new_window_warning' | translate }}"></i>
+          {{
+            'liquid.partials.course_landing_page_action_buttons.private_course_cta_text'
+            | translate: site_support_email: site.support_email
+          }}
+          <i
+            class="fa fa-external-link"
+            role="img"
+            aria-label="{{ 'liquid.accessibility.new_window_warning' | translate }}"
+          ></i>
         </a>
       </p>
     {% endif %}
@@ -97,12 +111,12 @@
 </div>
 
 <script>
-$(window).on('load', function() {
-  var $priceList = $('.product-action-buttons__additional-prices'),
+  $(window).on('load', function () {
+    var $priceList = $('.product-action-buttons__additional-prices'),
       $buttonPurchase = $('.product-action-buttons .button-purchase');
-  $buttonPurchase.attr('href', $priceList.val());
-  $priceList.on('change', function() {
-    $buttonPurchase.attr('href', $(this).val());
+    $buttonPurchase.attr('href', $priceList.val());
+    $priceList.on('change', function () {
+      $buttonPurchase.attr('href', $(this).val());
+    });
   });
-});
 </script>

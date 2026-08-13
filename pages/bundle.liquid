@@ -5,7 +5,6 @@
   will see a small section that displays details about the coupon.
 {% endcomment %}
 
-
 {% if page.bundle.coupon_supported and page.coupon_code_provided %}
   {% include 'product_landing_page_coupon_block' %}
 {% endif %}
@@ -14,11 +13,10 @@
   {{ content_for_page }}
 </main>
 
-
 {% schema %}
 {
-  "sections":{
-    "options":[
+  "sections": {
+    "options": [
       "course_cards",
       "banner",
       "banner_bundle",
@@ -46,10 +44,7 @@
       "video",
       "EnrollmentCheck"
     ],
-    "defaults":[
-      "banner_bundle",
-      "bundle_includes"
-    ]
+    "defaults": ["banner_bundle", "bundle_includes"]
   }
 }
 {% endschema %}

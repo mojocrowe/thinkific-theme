@@ -1,7 +1,7 @@
 <ul class="products__list">
   {% for collection in site.collections %}
     <li class="products__list-item">
-      {% include 'category_card' product: collection %}
+      {% include 'category_card', product: collection %}
     </li>
   {% endfor %}
 </ul>

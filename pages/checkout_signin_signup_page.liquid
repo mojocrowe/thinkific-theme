@@ -19,16 +19,9 @@
 
 {% schema %}
 {
-  "sections":{
-    "options":[
-      "banner",
-      "course_cards",
-      "frequently_asked_questions",
-      "call_to_action",
-      "countdown",
-      "video"
-    ],
-    "defaults":[]
+  "sections": {
+    "options": ["banner", "course_cards", "frequently_asked_questions", "call_to_action", "countdown", "video"],
+    "defaults": []
   }
 }
 {% endschema %}
@@ -61,14 +54,13 @@
       e.preventDefault();
       hide($formSignUp);
       show($formSignIn);
-    })
+    });
 
     $buttonSignUp.on('click', function (e) {
       // Display Sign Up container
       e.preventDefault();
       hide($formSignIn);
       show($formSignUp);
-    })
-
-  })(jQuery)
+    });
+  })(jQuery);
 </script>

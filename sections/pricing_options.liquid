@@ -1,6 +1,11 @@
-<section class="pricing-table pricing-options section-height__medium
-{% include 'section_utility_column_layout' %}
-{% include 'section_utility_heading_alignment' %}" data-preview-item="pricing-options">
+<section
+  class="
+    pricing-table pricing-options section-height__medium
+    {% include 'section_utility_column_layout' %}
+    {% include 'section_utility_heading_alignment' %}
+  "
+  data-preview-item="pricing-options"
+>
   <div class="pricing-table__container">
     <div class="pricing-table__wrapper">
       {% include 'section_headings' %}
@@ -10,7 +15,9 @@
           <ul class="pricing-table__list section__body">
             {% if product.is_free %}
               {% if product.is_course %}
-                {% assign enroll_free_text = 'liquid.partials.course_landing_page_action_buttons.link_enroll_free' | translate %}
+                {% assign enroll_free_text = 'liquid.partials.course_landing_page_action_buttons.link_enroll_free'
+                  | translate
+                %}
               {% elsif product.is_bundle %}
                 {% assign enroll_free_text = product.enroll_free_button_text %}
               {% elsif product.is_community %}
@@ -20,7 +27,7 @@
             {% if section.settings.button_text != empty %}
               {% assign button_text = section.settings.button_text %}
             {% else %}
-              {% assign button_text = "Buy Now" %}
+              {% assign button_text = 'Buy Now' %}
             {% endif %}
             <li class="pricing-table__list-item">
               <div class="pricing-table__list-item-details">
@@ -71,37 +78,35 @@
 </section>
 
 {% style %}
+  .pricing-options {
+    {% include 'section_style_column_layout' %}
+    {% include 'section_style_heading_alignment' %}
 
-.pricing-options {
-  {% include 'section_style_column_layout' %}
-  {% include 'section_style_heading_alignment' %}
+    {% if section.settings.section_padding_top %}
+      .pricing-table__container {
+        padding-top: 0;
+      }
+    {% endif %}
 
-  {% if section.settings.section_padding_top %}
-    .pricing-table__container {
-      padding-top: 0;
-    }
-  {% endif %}
-
-  {% if section.settings.section_padding_bottom %}
-    .pricing-table__container {
-      padding-bottom: 0;
-    }
-  {% endif %}
-}
-
+    {% if section.settings.section_padding_bottom %}
+      .pricing-table__container {
+        padding-bottom: 0;
+      }
+    {% endif %}
+  }
 {% endstyle %}
 
 {% schema %}
 {
-  "label":"Pricing options",
-  "description":"This section includes all of the pricing options for a product of your choice.",
-  "previewImageUrl":"https://cdn.thinkific.com/57/20210222/8eeee98fcdb968044d7de14d38f1473c.png",
-  "previewDescription":"Highlight specific payment options",
-  "settings":[
+  "label": "Pricing options",
+  "description": "This section includes all of the pricing options for a product of your choice.",
+  "previewImageUrl": "https://cdn.thinkific.com/57/20210222/8eeee98fcdb968044d7de14d38f1473c.png",
+  "previewDescription": "Highlight specific payment options",
+  "settings": [
     {
-      "type":"product_picker",
-      "id":"product_prices",
-      "label":"Product"
+      "type": "product_picker",
+      "id": "product_prices",
+      "label": "Product"
     },
     {
       "type": "text",
@@ -110,100 +115,100 @@
       "default": "Regular price"
     },
     {
-      "label":"Headings",
-      "settings":[
+      "label": "Headings",
+      "settings": [
         {
-          "type":"text",
-          "id":"heading",
-          "label":"Heading",
-          "default":"Pricing options"
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Pricing options"
         },
         {
-          "type":"text",
-          "id":"subheading",
-          "label":"Subheading",
-          "default":"Explain how different pricing options might be valuable to different segments of your audience."
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "Explain how different pricing options might be valuable to different segments of your audience."
         }
       ]
     },
     {
-      "label":"Button & text",
-      "settings":[
+      "label": "Button & text",
+      "settings": [
         {
-          "type":"text",
-          "id":"button_text",
-          "label":"Button text",
-          "default":"Get started now"
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Get started now"
         },
         {
-          "type":"radio",
-          "id":"button_type",
-          "label":"Button style",
-          "description":"",
-          "default":"primary",
-          "options":[
+          "type": "radio",
+          "id": "button_type",
+          "label": "Button style",
+          "description": "",
+          "default": "primary",
+          "options": [
             {
-              "value":"primary",
-              "label":"Primary"
+              "value": "primary",
+              "label": "Primary"
             },
             {
-              "value":"secondary",
-              "label":"Secondary"
+              "value": "secondary",
+              "label": "Secondary"
             }
           ]
         }
       ]
     },
     {
-      "label":"Layout",
-      "settings":[
+      "label": "Layout",
+      "settings": [
         {
-          "type":"checkbox",
-          "id":"section_padding_top",
-          "label":"Remove top section padding",
-          "default":false
+          "type": "checkbox",
+          "id": "section_padding_top",
+          "label": "Remove top section padding",
+          "default": false
         },
         {
-          "type":"checkbox",
-          "id":"section_padding_bottom",
-          "label":"Remove bottom section padding",
-          "default":false
+          "type": "checkbox",
+          "id": "section_padding_bottom",
+          "label": "Remove bottom section padding",
+          "default": false
         },
         {
-          "type":"radio",
-          "id":"column_layout",
-          "label":"Layout",
-          "description":"",
-          "default":"two-column",
-          "options":[
+          "type": "radio",
+          "id": "column_layout",
+          "label": "Layout",
+          "description": "",
+          "default": "two-column",
+          "options": [
             {
-              "value":"one-column",
-              "label":"One Column"
+              "value": "one-column",
+              "label": "One Column"
             },
             {
-              "value":"two-column",
-              "label":"Two Columns"
+              "value": "two-column",
+              "label": "Two Columns"
             }
           ]
         },
         {
-          "type":"radio",
-          "id":"heading_alignment",
-          "label":"Heading alignment",
-          "description":"",
-          "default":"left",
-          "options":[
+          "type": "radio",
+          "id": "heading_alignment",
+          "label": "Heading alignment",
+          "description": "",
+          "default": "left",
+          "options": [
             {
-              "value":"left",
-              "label":"Left"
+              "value": "left",
+              "label": "Left"
             },
             {
-              "value":"center",
-              "label":"Center"
+              "value": "center",
+              "label": "Center"
             },
             {
-              "value":"right",
-              "label":"Right"
+              "value": "right",
+              "label": "Right"
             }
           ]
         }

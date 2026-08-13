@@ -3,12 +3,16 @@
   an applied coupon (one that was specified in the url)
 {% endcomment %}
 
-<div class="products-coupon
-  {% if page.coupon.is_valid %}
-    products-coupon--valid
-  {% else %}
-    products-coupon--invalid
-  {% endif %}">
+<div
+  class="
+    products-coupon
+    {% if page.coupon.is_valid %}
+      products-coupon--valid
+    {% else %}
+      products-coupon--invalid
+    {% endif %}
+  "
+>
   <div class="products-coupon__container">
     {% if page.coupon.is_valid %}
       {{ page.coupon.applied_text }}
@@ -19,10 +23,12 @@
   <a class="products-coupon__close" aria-label="Close product coupon code modal">&times;</a>
 </div>
 <script>
-$(window).on('load', function() {
-  $('.products-coupon__close').on('click', function(e) {
-    e.preventDefault();
-    $('.products-coupon').fadeOut(400, function() { $(this).remove(); });
+  $(window).on('load', function () {
+    $('.products-coupon__close').on('click', function (e) {
+      e.preventDefault();
+      $('.products-coupon').fadeOut(400, function () {
+        $(this).remove();
+      });
+    });
   });
-})
 </script>

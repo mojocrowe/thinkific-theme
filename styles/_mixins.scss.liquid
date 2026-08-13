@@ -115,6 +115,7 @@
   font-family: $button__font-family;
   font-size: $button__font-size--mobile;
   font-weight: $button__font-weight;
+  letter-spacing: $button__letter-spacing;
   line-height: normal;
   text-align: center;
   text-decoration: none;
@@ -214,7 +215,11 @@
 @mixin card {
   @include display(flex);
   @include flex-direction(column);
-  @include transition(transform 200ms ease, background-color 200ms ease, box-shadow 200ms ease);
+  @include transition(
+    transform 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease
+  );
 
   position: relative;
   height: 100%;
@@ -229,7 +234,11 @@
   &:active,
   &:focus,
   &:hover {
-    @include transition(transform 200ms ease, background-color 200ms ease, box-shadow 200ms ease);
+    @include transition(
+      transform 200ms ease,
+      background-color 200ms ease,
+      box-shadow 200ms ease
+    );
 
     background-color: $card__background-color--active;
     color: $body__text-color;
@@ -323,7 +332,11 @@
 
   // Parent 'state' classname to modify the targets properties
   #{$trigger} & {
-    @include transition(all 0.3s ease-in-out 0s, visibility 0s linear 400ms, z-index 0s linear 0.01s);
+    @include transition(
+      all 0.3s ease-in-out 0s,
+      visibility 0s linear 400ms,
+      z-index 0s linear 0.01s
+    );
     @include transform(translateY(-1em));
     @include transform(translateY(0%));
     @include transition-delay(0s);
@@ -366,7 +379,7 @@
       @include screen-md-min {
         margin-top: 0;
         margin-right: 0;
-      }  
+      }
       margin-top: $gutter-width / 2;
     }
   }
@@ -464,7 +477,10 @@
 }
 
 // Page Padding
-@mixin page-padding($padding-top: $gutter-width * 2, $padding-bottom: $gutter-width * 2) {
+@mixin page-padding(
+  $padding-top: $gutter-width * 2,
+  $padding-bottom: $gutter-width * 2
+) {
   @include screen-md-min {
     padding-top: $padding-top;
     padding-bottom: $padding-bottom;
@@ -475,7 +491,10 @@
 }
 
 // Section Height
-@mixin section-height($padding-top: $section-height__large, $padding-bottom: $padding-top) {
+@mixin section-height(
+  $padding-top: $section-height__large,
+  $padding-bottom: $padding-top
+) {
   & > [class*="__container"] {
     padding-top: $padding-top;
     padding-bottom: $padding-bottom;
@@ -517,6 +536,7 @@
   font-family: $heading__font-family;
   font-size: $heading__font-size--mobile;
   font-weight: $heading__font-weight;
+  letter-spacing: $heading__letter-spacing;
   line-height: $heading__line-height;
 }
 
@@ -533,6 +553,7 @@
   font-family: $subheading__font-family;
   font-size: $subheading__font-size--mobile;
   font-weight: $subheading__font-weight;
+  letter-spacing: $subheading__letter-spacing;
   line-height: $heading__line-height;
 }
 
@@ -548,6 +569,7 @@
   font-family: $heading__font-family;
   font-size: $heading__font-size--mobile * 1.125;
   font-weight: $heading__font-weight;
+  letter-spacing: $heading__letter-spacing;
   line-height: $heading__line-height;
 }
 
@@ -559,6 +581,7 @@
   font-family: $heading__font-family;
   font-size: $heading__font-size--mobile;
   font-weight: $heading__font-weight;
+  letter-spacing: $heading__letter-spacing;
   line-height: $heading__line-height;
 }
 
@@ -570,6 +593,7 @@
   font-family: $secondary-heading__font-family;
   font-size: $secondary-heading__font-size--mobile;
   font-weight: $secondary-heading__font-weight;
+  letter-spacing: $secondary-heading__letter-spacing;
   line-height: $heading__line-height;
 }
 
@@ -587,6 +611,7 @@
   font-family: $secondary-heading__font-family;
   font-size: 20px;
   font-weight: $secondary-heading__font-weight;
+  letter-spacing: $secondary-heading__letter-spacing;
   line-height: 1.25;
 }
 
@@ -612,6 +637,7 @@
     font-family: $banner__font-family;
     font-size: $banner__font-size--mobile;
     font-weight: $banner__font-weight;
+    letter-spacing: $banner__letter-spacing;
     line-height: $banner__line-height;
   }
 

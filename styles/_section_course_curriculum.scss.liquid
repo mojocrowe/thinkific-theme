@@ -18,7 +18,6 @@
     margin-bottom: 0;
   }
 
-
   &__content {
     @include screen-md-max {
       @include flex-direction(column);
@@ -161,6 +160,7 @@
     font-family: $body__font-family;
     font-size: $body__font-size * 1.2;
     font-weight: $body__font-weight;
+    letter-spacing: $body__letter-spacing;
   }
 
   &__lesson-title {
@@ -205,6 +205,7 @@
       color: $link__color;
       font-family: $body__font-family;
       font-weight: normal;
+      letter-spacing: $body__letter-spacing;
       text-transform: none;
 
       &:hover,

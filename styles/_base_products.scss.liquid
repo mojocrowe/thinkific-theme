@@ -80,6 +80,7 @@
       font-family: $secondary-heading__font-family;
       font-size: 20px;
       font-weight: $secondary-heading__font-weight;
+      letter-spacing: $secondary-heading__letter-spacing;
       line-height: $heading__line-height;
     }
   }
@@ -269,7 +270,12 @@
         }
 
         .mask {
-          clip: rect(0, $progress__circle-size, $progress__circle-size, $progress__circle-size/2);
+          clip: rect(
+            0,
+            $progress__circle-size,
+            $progress__circle-size,
+            $progress__circle-size/2
+          );
 
           .fill {
             background-color: $progress__circle-color;
@@ -289,6 +295,7 @@
         color: $accent__color;
         font-family: $heading__font-family;
         font-size: 0.75rem;
+        letter-spacing: $heading__letter-spacing;
         line-height: $progress__inset-size;
         text-align: center;
         box-shadow: $shadow-1;
@@ -341,7 +348,9 @@
           left: 0;
           width: 100%;
           height: 3px;
-          background-color: dynamic-contrast-color($interface__background-color--active);
+          background-color: dynamic-contrast-color(
+            $interface__background-color--active
+          );
           content: "";
           z-index: z-index(default);
         }
@@ -399,7 +408,11 @@
         &:active,
         &:hover,
         &:focus {
-          @include transition(background-color 200ms ease, color 200ms ease, box-shadow 200ms ease);
+          @include transition(
+            background-color 200ms ease,
+            color 200ms ease,
+            box-shadow 200ms ease
+          );
           background-color: $interface__background-color--active;
           color: $link__color;
           box-shadow: $shadow-button;
@@ -640,7 +653,11 @@
     left: $review-star__size * 3.75;
   }
 
-  .review__star ~ .review__star ~ .review__star ~ .review__star ~ .review__star {
+  .review__star
+    ~ .review__star
+    ~ .review__star
+    ~ .review__star
+    ~ .review__star {
     left: $review-star__size * 5;
   }
 }

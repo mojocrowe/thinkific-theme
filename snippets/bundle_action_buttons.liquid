@@ -6,8 +6,10 @@
 {% assign bundle = page.bundle %}
 
 <div
-  class="product-action-buttons__purchase
-  {% if bundle.additional_prices != empty %}product-action-buttons--has-additional-prices{% endif %}"
+  class="
+    product-action-buttons__purchase
+    {% if bundle.additional_prices != empty %}product-action-buttons--has-additional-prices{% endif %}
+  "
 >
   {% if bundle.is_public %}
     {% if bundle.previously_purchased %}
@@ -20,7 +22,11 @@
           <label for="{{ bundle.name | kebab_case }}" class="sr-only">
             {{ 'liquid.accessibility.select_label_multiple_prices' | translate }}
           </label>
-          <select id="{{ bundle.name | kebab_case }}" name="{{ bundle.display_price }}" class="form__control product-action-buttons__additional-prices">
+          <select
+            id="{{ bundle.name | kebab_case }}"
+            name="{{ bundle.display_price }}"
+            class="form__control product-action-buttons__additional-prices"
+          >
             <option value="{{ bundle.links.buy }}" selected>{{ bundle.display_price }}</option>
             {% for price in bundle.additional_prices %}
               <option value="{{ price.links.add_to_cart }}">{{ price.display_price }}</option>
@@ -42,8 +48,15 @@
       <p class="product-action-button--private">
         <i aria-hidden="true" class="fa fa-lock"></i>
         <a href="mailto:{{ site.support_email }}" target="_blank">
-          {{ 'liquid.partials.bundle_landing_page_action_buttons.private_bundle_cta_text' | translate: site_support_email: site.support_email }}
-          <i class="fa fa-external-link" role="img" aria-label="{{ 'liquid.accessibility.new_window_warning' | translate }}"></i>
+          {{
+            'liquid.partials.bundle_landing_page_action_buttons.private_bundle_cta_text'
+            | translate: site_support_email: site.support_email
+          }}
+          <i
+            class="fa fa-external-link"
+            role="img"
+            aria-label="{{ 'liquid.accessibility.new_window_warning' | translate }}"
+          ></i>
         </a>
       </p>
     {% else %}
@@ -55,12 +68,12 @@
 </div>
 
 <script>
-$(window).on('load', function() {
-  var $priceList = $('.product-action-buttons__additional-prices'),
+  $(window).on('load', function () {
+    var $priceList = $('.product-action-buttons__additional-prices'),
       $buttonPurchase = $('.product-action-buttons .button-purchase');
-  $buttonPurchase.attr('href', $priceList.val());
-  $priceList.on('change', function() {
-    $buttonPurchase.attr('href', $(this).val());
+    $buttonPurchase.attr('href', $priceList.val());
+    $priceList.on('change', function () {
+      $buttonPurchase.attr('href', $(this).val());
+    });
   });
-});
 </script>

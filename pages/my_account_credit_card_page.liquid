@@ -13,7 +13,9 @@
       {% include 'my_account_menu' %}
       <main class="my-account__content" id="main-content" role="main">
         <h2 class="my-account__heading">{{ 'liquid.views.my_account_credit_card_page.header_title' | translate }}</h2>
-        <h3 class="my-account__card_information">{{ 'liquid.views.my_account_credit_card_page.card_title' | translate }}</h3>
+        <h3 class="my-account__card_information">
+          {{ 'liquid.views.my_account_credit_card_page.card_title' | translate }}
+        </h3>
         {{ page.my_account_credit_card_form }}
       </main>
     </div>

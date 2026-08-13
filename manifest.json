@@ -2,7 +2,7 @@
   "info": {
     "name": "Mojo Crowe",
     "author": "Mojo Crowe",
-    "version": "1.0.84",
+    "version": "1.0.93",
     "documentation_url": "https://mojocrowe.com/",
     "support_url": "https://mojocrowe.com/"
   },
@@ -499,6 +499,12 @@
           ]
         },
         {
+          "type": "text",
+          "id": "banner_letter_spacing",
+          "label": "Letter spacing",
+          "default": "-3%"
+        },
+        {
           "type": "header",
           "label": "Heading"
         },
@@ -506,7 +512,7 @@
           "type": "font_select",
           "id": "heading_font",
           "label": "Font",
-          "default": "PPNeueMontreal",
+          "default": "Avantt",
           "options": [
             {
               "value": "Avantt",
@@ -720,7 +726,7 @@
           "type": "select",
           "id": "heading_weight",
           "label": "Weight",
-          "default": "100",
+          "default": "900",
           "options": [
             {
               "value": "100",
@@ -753,6 +759,12 @@
           ]
         },
         {
+          "type": "text",
+          "id": "heading_letter_spacing",
+          "label": "Letter spacing",
+          "default": "-3%"
+        },
+        {
           "type": "header",
           "label": "Subheading"
         },
@@ -760,7 +772,7 @@
           "type": "font_select",
           "id": "subheading_font",
           "label": "Font",
-          "default": "Concrette M",
+          "default": "PPNeueMontreal",
           "options": [
             {
               "value": "Avantt",
@@ -974,7 +986,7 @@
           "type": "select",
           "id": "subheading_weight",
           "label": "Weight",
-          "default": "300",
+          "default": "400",
           "options": [
             {
               "value": "100",
@@ -1005,6 +1017,12 @@
               "label": "Black"
             }
           ]
+        },
+        {
+          "type": "text",
+          "id": "subheading_letter_spacing",
+          "label": "Letter spacing",
+          "default": "3%"
         },
         {
           "type": "header",
@@ -1261,6 +1279,12 @@
           ]
         },
         {
+          "type": "text",
+          "id": "secondary_heading_letter_spacing",
+          "label": "Letter spacing",
+          "default": "0%"
+        },
+        {
           "type": "header",
           "label": "Body copy"
         },
@@ -1268,7 +1292,7 @@
           "type": "font_select",
           "id": "body_font",
           "label": "Font",
-          "default": "Concrette M",
+          "default": "PPNeueMontreal",
           "options": [
             {
               "value": "Avantt",
@@ -1465,6 +1489,12 @@
               "label": "Black"
             }
           ]
+        },
+        {
+          "type": "text",
+          "id": "body_letter_spacing",
+          "label": "Letter spacing",
+          "default": "3%"
         },
         {
           "type": "header",
@@ -1671,6 +1701,12 @@
               "label": "Black"
             }
           ]
+        },
+        {
+          "type": "text",
+          "id": "button_letter_spacing",
+          "label": "Letter spacing",
+          "default": "0%"
         }
       ]
     },
@@ -1985,21 +2021,27 @@
         "banner_font": "PPNeueMontreal",
         "banner_size_desktop": "40px",
         "banner_weight": "700",
-        "heading_font": "PPNeueMontreal",
+        "banner_letter_spacing": "-3%",
+        "heading_font": "Avantt",
         "heading_size_desktop": "40px",
-        "heading_weight": "100",
-        "subheading_font": "Concrette M",
+        "heading_weight": "900",
+        "heading_letter_spacing": "-3%",
+        "subheading_font": "PPNeueMontreal",
         "subheading_size_desktop": "24px",
-        "subheading_weight": "100",
+        "subheading_weight": "400",
+        "subheading_letter_spacing": "3%",
         "secondary_heading_font": "Concrette M",
         "secondary_heading_size_desktop": "22px",
         "secondary_heading_weight": "400",
-        "body_font": "Concrette M",
+        "secondary_heading_letter_spacing": "0%",
+        "body_font": "PPNeueMontreal",
         "body_size_desktop": "18px",
         "body_weight": "400",
+        "body_letter_spacing": "3%",
         "button_font": "Concrette M",
         "button_size_desktop": "18px",
         "button_weight": "600",
+        "button_letter_spacing": "0%",
         "banner_size_mobile": "36px",
         "heading_size_mobile": "32px",
         "subheading_size_mobile": "20px",

@@ -23,7 +23,7 @@
           <p class="card__category">
             {% for collection in product.collections %}
               {% if forloop.last == false %}
-                {{ collection.name | append: ", " }}
+                {{ collection.name | append: ', ' }}
               {% else %}
                 {{ collection.name }}
               {% endif %}

@@ -5,7 +5,8 @@
     </h2>
   {% else %}
     <h2 class="checkout__heading section__heading">
-      {{ 'liquid.partials.checkout_thankyou.header_thanks' | translate }} {{ site.current_user.first_name_last_initial }}
+      {{ 'liquid.partials.checkout_thankyou.header_thanks' | translate }}
+      {{ site.current_user.first_name_last_initial }}
     </h2>
   {% endif %}
   <p class="checkout__order-receipt">
@@ -16,7 +17,7 @@
   </p>
   {% if page.has_after_purchase_flow and page.after_purchase_flow.show_custom_messaging %}
     <h2 class="checkout__subheading section__heading">
-      {{  page.after_purchase_flow.custom_message_subheading }}
+      {{ page.after_purchase_flow.custom_message_subheading }}
     </h2>
   {% else %}
     <h2 class="checkout__subheading section__heading">
@@ -30,7 +31,13 @@
         <li class="checkout__bundle-list-item">
           <div class="checkout__product-details">
             <h3 class="section__heading--secondary">{{ product.name }}</h3>
-            <a aria-label="{{ product.name }}: {{ product.button_text }}" class="button button-primary" href="{{ product.button_link }}">{{ product.button_text }}</a>
+            <a
+              aria-label="{{ product.name }}: {{ product.button_text }}"
+              class="button button-primary"
+              href="{{ product.button_link }}"
+            >
+              {{- product.button_text -}}
+            </a>
           </div>
         </li>
       {% endfor %}
@@ -45,8 +52,8 @@
 
 {% schema %}
 {
-  "label":"Default",
-  "description":"This is a default section — the foundation of your Thinkific site.  While this section is not editable, you can customize this page by adding new sections.",
-  "settings":[]
+  "label": "Default",
+  "description": "This is a default section — the foundation of your Thinkific site.  While this section is not editable, you can customize this page by adding new sections.",
+  "settings": []
 }
 {% endschema %}

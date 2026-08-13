@@ -34,9 +34,15 @@
                 <tbody>
                   {% for commission in page.commissions %}
                     <tr>
-                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_product' | translate }}">{{ commission.product_name }}</td>
-                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_date' | translate }}">{{ commission.date | long_date }}</td>
-                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_sale' | translate }}">{{ commission.sale_total }}</td>
+                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_product' | translate }}">
+                        {{ commission.product_name }}
+                      </td>
+                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_date' | translate }}">
+                        {{ commission.date | long_date }}
+                      </td>
+                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_sale' | translate }}">
+                        {{ commission.sale_total }}
+                      </td>
                       <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_commission' | translate }}">
                         {% if commission.sale_was_refunded %}
                           <span class="affiliate-commission--refunded">{{ commission.amount_without_refunds }}</span>
@@ -62,8 +68,12 @@
                 <tbody>
                   {% for payout in page.payouts %}
                     <tr>
-                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_date' | translate }}">{{ payout.date | long_date }}</td>
-                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_amount' | translate }}">{{ payout.amount }}</td>
+                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_date' | translate }}">
+                        {{ payout.date | long_date }}
+                      </td>
+                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_amount' | translate }}">
+                        {{ payout.amount }}
+                      </td>
                     </tr>
                   {% endfor %}
                 </tbody>
@@ -83,8 +93,12 @@
                 <tbody>
                   {% for visitor_date in page.visitor_dates %}
                     <tr>
-                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_date' | translate }}">{{ visitor_date.date | long_date }}</td>
-                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_total' | translate }}">{{ visitor_date.total_visitors }}</td>
+                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_date' | translate }}">
+                        {{ visitor_date.date | long_date }}
+                      </td>
+                      <td data-label="{{ 'liquid.views.affiliate_reports_page.table_header_total' | translate }}">
+                        {{ visitor_date.total_visitors }}
+                      </td>
                     </tr>
                   {% endfor %}
                 </tbody>

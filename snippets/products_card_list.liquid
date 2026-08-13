@@ -6,10 +6,10 @@
   <ul class="products__list">
     {% for product in paginate.collection %}
       <li class="products__list-item">
-        {% include 'card' product: product.productable %}
+        {% include 'card', product: product.productable %}
       </li>
       {% assign product_count = forloop.length %}
     {% endfor %}
   </ul>
-  {% include 'pagination' with paginate, ariaLabelledBy: "category-name" %}
+  {% include 'pagination' with paginate, ariaLabelledBy: 'category-name' %}
 {% endpaginate %}

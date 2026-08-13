@@ -44,7 +44,10 @@
         </div>
         {% if page.stripe_checkout_is_allowed %}
           <div class="checkout__footer-info">
-            <strong><i class="fa fa-lock" aria-hidden="true"></i>{{ 'liquid.partials.checkout_overview.footer_secure_checkout' | translate }}</strong>
+            <strong
+              ><i class="fa fa-lock" aria-hidden="true"></i>
+              {{- 'liquid.partials.checkout_overview.footer_secure_checkout' | translate -}}
+            </strong>
             <p>{{ 'liquid.partials.checkout_overview.footer_powered_by_stripe' | translate }}</p>
           </div>
         {% endif %}
@@ -58,7 +61,11 @@
           {{ 'liquid.partials.checkout_overview.footer_need_help' | translate }}
           <a href="mailto:{{ site.support_email }}" target="_blank">
             {{ 'liquid.partials.checkout_overview.footer_contact_us' | translate }}
-            <i class='fa fa-external-link' role='img' aria-label="{{ 'liquid.accessibility.new_window_warning' | translate }}"></i>
+            <i
+              class="fa fa-external-link"
+              role="img"
+              aria-label="{{ 'liquid.accessibility.new_window_warning' | translate }}"
+            ></i>
           </a>
         </p>
       </div>
@@ -68,8 +75,8 @@
 
 {% schema %}
 {
-  "label":"Default",
-  "description":"This is a default section — the foundation of your Thinkific site.  While this section is not editable, you can customize this page by adding new sections.",
-  "settings":[]
+  "label": "Default",
+  "description": "This is a default section — the foundation of your Thinkific site.  While this section is not editable, you can customize this page by adding new sections.",
+  "settings": []
 }
 {% endschema %}

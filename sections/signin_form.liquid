@@ -20,7 +20,9 @@
         autocomplete="off"
         autocorrect="off"
         spellcheck="false"
-        {% if field.required %}required{% endif %}
+        {% if field.required %}
+          required
+        {% endif %}
         class="form__control"
         aria-describedby="{{ field.name }}-error"
       />
@@ -49,7 +51,9 @@
         autocomplete="off"
         autocorrect="off"
         spellcheck="false"
-        {% if field.required %}required{% endif %}
+        {% if field.required %}
+          required
+        {% endif %}
         class="form__control"
         aria-describedby="{{ field.name }}-error"
       />
@@ -92,7 +96,9 @@
       This CSS hidden input is necessary to stop spam bots.
     {% endcomment %}
     <div class="form__group honeypot-field">
-      <label aria-hidden="true" for="confirm-email">{{ 'liquid.views.sign_up_page.honeypot_field_label' | translate }}</label>
+      <label aria-hidden="true" for="confirm-email">
+        {{- 'liquid.views.sign_up_page.honeypot_field_label' | translate -}}
+      </label>
       <input aria-hidden="true" type="text" name="confirm-email" id="confirm-email" autocomplete="off" tabindex="-1">
     </div>
 
@@ -117,7 +123,7 @@
 </article>
 
 <aside class="sign-in__sign-up">
-  <a href='{{ page.sign_up_url }}'>
+  <a href="{{ page.sign_up_url }}">
     {{ 'liquid.views.sign_in_page.link_create_account' | translate }}
   </a>
 </aside>
@@ -126,8 +132,8 @@
 
 {% schema %}
 {
-  "label":"Default",
-  "description":"This is a default section — the foundation of your Thinkific site.  While this section is not editable, you can customize this page by adding new sections.",
-  "settings":[]
+  "label": "Default",
+  "description": "This is a default section — the foundation of your Thinkific site.  While this section is not editable, you can customize this page by adding new sections.",
+  "settings": []
 }
 {% endschema %}

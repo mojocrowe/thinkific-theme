@@ -5,54 +5,81 @@
         <span class="student-certificate__expired__hr"></span>
         <div class="student-certificate__expired__label__container">
           <i class="toga-icon toga-icon-warning" aria-hidden="true"></i>
-          <span class="student-certificate__expired__label">{{ 'liquid.partials.student_certificate.certificate_expired' | translate }}</span>
+          <span class="student-certificate__expired__label">
+            {{- 'liquid.partials.student_certificate.certificate_expired' | translate -}}
+          </span>
         </div>
         <span class="student-certificate__expired__hr"></span>
       </div>
     {% endif %}
 
     <div class="student-certificate__image">
-      <img src="{{ page.credential_image_url }}" alt="Certificate" class="img-responsive {% if page.expired %}faded{% endif %}" loading="lazy" />
+      <img
+        src="{{ page.credential_image_url }}"
+        alt="Certificate"
+        class="img-responsive {% if page.expired %}faded{% endif %}"
+        loading="lazy"
+      />
     </div>
 
     <div class="student-certificate__data">
       <div class="student-certificate__data__container">
-        <span class="student-certificate__data__label">{{ 'liquid.partials.student_certificate.student' | translate }}: </span>
-        <span class="student-certificate__data__value">{{page.student_name}}</span>
+        <span class="student-certificate__data__label">
+          {{- 'liquid.partials.student_certificate.student' | translate }}:
+        </span>
+        <span class="student-certificate__data__value">{{ page.student_name }}</span>
       </div>
       <div class="student-certificate__data__container">
-        <span class="student-certificate__data__label">{{ 'liquid.partials.student_certificate.school' | translate }}: </span>
-        <span class="student-certificate__data__value">{{page.school}}</span>
+        <span class="student-certificate__data__label">
+          {{- 'liquid.partials.student_certificate.school' | translate }}:
+        </span>
+        <span class="student-certificate__data__value">{{ page.school }}</span>
       </div>
       <div class="student-certificate__data__container">
-        <span class="student-certificate__data__label">{{ 'liquid.partials.student_certificate.course' | translate }}: </span>
-        <span class="student-certificate__data__value">{{page.course}}</span>
+        <span class="student-certificate__data__label">
+          {{- 'liquid.partials.student_certificate.course' | translate }}:
+        </span>
+        <span class="student-certificate__data__value">{{ page.course }}</span>
       </div>
       <div class="student-certificate__data__container">
-        <span class="student-certificate__data__label">{{ 'liquid.partials.student_certificate.certificate_id' | translate }}: </span>
-        <span class="student-certificate__data__value">{{page.certificate_id}}</span>
+        <span class="student-certificate__data__label">
+          {{- 'liquid.partials.student_certificate.certificate_id' | translate }}:
+        </span>
+        <span class="student-certificate__data__value">{{ page.certificate_id }}</span>
       </div>
       <div class="student-certificate__data__container">
-        <span class="student-certificate__data__label">{{ 'liquid.partials.student_certificate.issued' | translate }}: </span>
-        <span class="student-certificate__data__value">{{page.issue_date}}</span>
+        <span class="student-certificate__data__label">
+          {{- 'liquid.partials.student_certificate.issued' | translate }}:
+        </span>
+        <span class="student-certificate__data__value">{{ page.issue_date }}</span>
       </div>
       <div class="student-certificate__data__container">
-        <span class="student-certificate__data__label">{{ 'liquid.partials.student_certificate.expires' | translate }}: </span>
-        <span class="student-certificate__data__value">{{page.expiry_date}}</span>
+        <span class="student-certificate__data__label">
+          {{- 'liquid.partials.student_certificate.expires' | translate }}:
+        </span>
+        <span class="student-certificate__data__value">{{ page.expiry_date }}</span>
       </div>
     </div>
-    
+
     <div class="student-certificate__share">
       {% if page.is_preview %}
         <div class="addthis_inline_share_toolbox"></div>
-        <button class="button button-secondary">{{ 'liquid.partials.student_certificate.copy_link' | translate }}</button>
-        <button class="button button-secondary">{{ 'liquid.partials.student_certificate.download_pdf' | translate }}</button>      
+        <button class="button button-secondary">
+          {{ 'liquid.partials.student_certificate.copy_link' | translate }}
+        </button>
+        <button class="button button-secondary">
+          {{ 'liquid.partials.student_certificate.download_pdf' | translate }}
+        </button>
       {% else %}
         {% if page.is_certificate_owner %}
           <div class="addthis_inline_share_toolbox"></div>
         {% endif %}
-        <button class="button button-secondary" id="copy-link">{{ 'liquid.partials.student_certificate.copy_link' | translate }}</button>
-        <button class="button button-secondary" id="download-pdf" data-pdf-url="{{page.pdf_path}}">{{ 'liquid.partials.student_certificate.download_pdf' | translate }}</button>
+        <button class="button button-secondary" id="copy-link">
+          {{ 'liquid.partials.student_certificate.copy_link' | translate }}
+        </button>
+        <button class="button button-secondary" id="download-pdf" data-pdf-url="{{page.pdf_path}}">
+          {{ 'liquid.partials.student_certificate.download_pdf' | translate }}
+        </button>
       {% endif %}
     </div>
   </div>
@@ -112,8 +139,8 @@
 
 {% schema %}
 {
-  "label":"Default",
-  "description":"This is a default section — the foundation of your Thinkific site.  While this section is not editable, you can customize this page by adding new sections.",
-  "settings":[]
+  "label": "Default",
+  "description": "This is a default section — the foundation of your Thinkific site.  While this section is not editable, you can customize this page by adding new sections.",
+  "settings": []
 }
 {% endschema %}

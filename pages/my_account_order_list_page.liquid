@@ -35,10 +35,18 @@
                     {% endif %}
                     {{ order.product_name }}
                   </td>
-                  <td data-label="{{ 'liquid.views.my_account_orders_index_page.column_date' | translate }}">{{ order.created_date }}</td>
-                  <td data-label="{{ 'liquid.views.my_account_orders_shared.expires' | translate }}">{{ order.product_expiry_date }}</td>
-                  <td data-label="{{ 'liquid.views.my_account_orders_index_page.column_status' | translate }}">{{ order.status_key | translate }}</td>
-                  <td data-label="{{ 'liquid.views.my_account_orders_index_page.column_current_value' | translate }}">{{ order.cost }}</td>
+                  <td data-label="{{ 'liquid.views.my_account_orders_index_page.column_date' | translate }}">
+                    {{ order.created_date }}
+                  </td>
+                  <td data-label="{{ 'liquid.views.my_account_orders_shared.expires' | translate }}">
+                    {{ order.product_expiry_date }}
+                  </td>
+                  <td data-label="{{ 'liquid.views.my_account_orders_index_page.column_status' | translate }}">
+                    {{ order.status_key | translate }}
+                  </td>
+                  <td data-label="{{ 'liquid.views.my_account_orders_index_page.column_current_value' | translate }}">
+                    {{ order.cost }}
+                  </td>
                 </tr>
               {% endfor %}
             {% else %}

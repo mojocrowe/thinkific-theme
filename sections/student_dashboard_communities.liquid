@@ -7,11 +7,11 @@
     Display the community cards
   {% endcomment %}
   {% assign communities = page.communities | sort: 'name' %}
-    <ul class="products__list">
-      {% for community in communities %}
-        <li class="products__list-item">
-          {% include 'dashboard_community_card' with community %}
-        </li>
-      {% endfor %}
-    </ul>
+  <ul class="products__list">
+    {% for community in communities %}
+      <li class="products__list-item">
+        {% include 'dashboard_community_card' with community %}
+      </li>
+    {% endfor %}
+  </ul>
 </div>

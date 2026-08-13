@@ -9,9 +9,9 @@
   <section class="course-curriculum-card__details">
     {% if section.settings.course_card_heading != blank %}
       <h3 class="course-curriculum-card__details__title section__heading--secondary">
-        {{section.settings.course_card_heading}}
+        {{ section.settings.course_card_heading }}
       </h3>
-      <hr aria-hidden="true"/>
+      <hr aria-hidden="true" />
     {% endif %}
     <ul>
       {% if section.settings.hide_course_price == false %}

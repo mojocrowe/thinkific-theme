@@ -1,17 +1,11 @@
-{% if section.settings.background_color == "background_1" %}
-  [class*="__container"]:before {
-    background-color: $body__background-color;
-  }
+{% if section.settings.background_color == 'background_1' %}
+  [class*="__container"]:before { background-color: $body__background-color; }
 {% endif %}
 
-{% if section.settings.background_color == "background_2" %}
-  [class*="__container"]:before {
-    background-color: $body__background-color-2;
-  }
+{% if section.settings.background_color == 'background_2' %}
+  [class*="__container"]:before { background-color: $body__background-color-2; }
 {% endif %}
 
-{% if section.settings.background_color == "background_3" %}
-  [class*="__container"]:before {
-    background-color: $body__background-color-3;
-  }
+{% if section.settings.background_color == 'background_3' %}
+  [class*="__container"]:before { background-color: $body__background-color-3; }
 {% endif %}

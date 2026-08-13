@@ -26,8 +26,12 @@
               <tbody>
                 {% for affiliate_link in page.affiliate_links %}
                   <tr>
-                    <td data-label="{{ 'liquid.views.affiliate_links_page.table_header_name' | translate }}">{{ affiliate_link.product_name }}</td>
-                    <td data-label="{{ 'liquid.views.affiliate_links_page.table_header_link' | translate }}">{{ affiliate_link.url }}</td>
+                    <td data-label="{{ 'liquid.views.affiliate_links_page.table_header_name' | translate }}">
+                      {{ affiliate_link.product_name }}
+                    </td>
+                    <td data-label="{{ 'liquid.views.affiliate_links_page.table_header_link' | translate }}">
+                      {{ affiliate_link.url }}
+                    </td>
                   </tr>
                 {% endfor %}
               </tbody>

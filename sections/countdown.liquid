@@ -46,62 +46,62 @@
 </section>
 
 {% style %}
-.countdown {
-  {% include 'section_style_background_color' %}
-  {% include 'section_style_column_layout' %}
+  .countdown {
+    {% include 'section_style_background_color' %}
+    {% include 'section_style_column_layout' %}
 
-  {% if section.settings.section_padding_top %}
-    .countdown__container {
-      padding-top: 0;
-    }
-  {% endif %}
+    {% if section.settings.section_padding_top %}
+      .countdown__container {
+        padding-top: 0;
+      }
+    {% endif %}
 
-  {% if section.settings.section_padding_bottom %}
-    .countdown__container {
-      padding-bottom: 0;
-    }
-  {% endif %}
-}
+    {% if section.settings.section_padding_bottom %}
+      .countdown__container {
+        padding-bottom: 0;
+      }
+    {% endif %}
+  }
 {% endstyle %}
 
 {% schema %}
 {
-  "label":"Countdown timer",
-  "description":"",
-  "previewImageUrl":"https://cdn.thinkific.com/57/20210222/81d0e60cf1481ffb97fe59ad6dc9ea99.png",
-  "previewDescription":"Add urgency to the buying decision",
-  "settings":[
+  "label": "Countdown timer",
+  "description": "",
+  "previewImageUrl": "https://cdn.thinkific.com/57/20210222/81d0e60cf1481ffb97fe59ad6dc9ea99.png",
+  "previewDescription": "Add urgency to the buying decision",
+  "settings": [
     {
-      "type":"datetime",
-      "id":"expiry_date",
-      "label":"Expiry date and time (UTC)",
-      "default":"2022-12-31T18:00:00.000Z"
+      "type": "datetime",
+      "id": "expiry_date",
+      "label": "Expiry date and time (UTC)",
+      "default": "2022-12-31T18:00:00.000Z"
     },
     {
-      "label":"Headings",
-      "settings":[
+      "label": "Headings",
+      "settings": [
         {
-          "type":"text",
-          "id":"heading",
-          "label":"Heading",
-          "default":"Countdown timer"
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Countdown timer"
         },
         {
-          "type":"text",
-          "id":"subheading",
-          "label":"Subheading",
-          "default":"Use this section to create urgency for your offer."
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "Use this section to create urgency for your offer."
         }
       ]
     },
     {
-      "label":"Button",
-      "settings":[
+      "label": "Button",
+      "settings": [
         {
-          "type":"page_picker",
-          "id":"button_link",
-          "label":"Link to",
-          "default":""
+          "type": "page_picker",
+          "id": "button_link",
+          "label": "Link to",
+          "default": ""
         },
         {
           "type": "text",
@@ -110,74 +110,74 @@
           "default": "Call to action"
         },
         {
-          "type":"radio",
-          "id":"button_type",
-          "label":"Button style",
-          "description":"",
-          "default":"primary",
-          "options":[
+          "type": "radio",
+          "id": "button_type",
+          "label": "Button style",
+          "description": "",
+          "default": "primary",
+          "options": [
             {
-              "value":"primary",
-              "label":"Primary"
+              "value": "primary",
+              "label": "Primary"
             },
             {
-              "value":"secondary",
-              "label":"Secondary"
+              "value": "secondary",
+              "label": "Secondary"
             }
           ]
         }
       ]
     },
     {
-      "label":"Background & layout",
-      "settings":[
+      "label": "Background & layout",
+      "settings": [
         {
-          "type":"select",
-          "id":"background_color",
-          "label":"Background color",
-          "description":"",
-          "default":"background_2",
-          "options":[
+          "type": "select",
+          "id": "background_color",
+          "label": "Background color",
+          "description": "",
+          "default": "background_2",
+          "options": [
             {
-              "value":"background_1",
-              "label":"Primary"
+              "value": "background_1",
+              "label": "Primary"
             },
             {
-              "value":"background_2",
-              "label":"Secondary"
+              "value": "background_2",
+              "label": "Secondary"
             },
             {
-              "value":"background_3",
-              "label":"Tertiary"
+              "value": "background_3",
+              "label": "Tertiary"
             }
           ]
         },
         {
-          "type":"checkbox",
-          "id":"section_padding_top",
-          "label":"Remove top section padding",
-          "default":false
+          "type": "checkbox",
+          "id": "section_padding_top",
+          "label": "Remove top section padding",
+          "default": false
         },
         {
-          "type":"checkbox",
-          "id":"section_padding_bottom",
-          "label":"Remove bottom section padding",
-          "default":false
+          "type": "checkbox",
+          "id": "section_padding_bottom",
+          "label": "Remove bottom section padding",
+          "default": false
         },
         {
-          "type":"radio",
-          "id":"column_layout",
-          "label":"Column layout",
-          "description":"",
-          "default":"two-column",
-          "options":[
+          "type": "radio",
+          "id": "column_layout",
+          "label": "Column layout",
+          "description": "",
+          "default": "two-column",
+          "options": [
             {
-              "value":"one-column",
-              "label":"One Column"
+              "value": "one-column",
+              "label": "One Column"
             },
             {
-              "value":"two-column",
-              "label":"Two Columns"
+              "value": "two-column",
+              "label": "Two Columns"
             }
           ]
         }

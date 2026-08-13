@@ -9,7 +9,7 @@
         <li class="products__collections-list-item">
           <a
             href="{{ collection.url }}"
-            {% if page.collection.id != nil and page.collection.id == collection.id %}
+            {% if page.collection.id != null and page.collection.id == collection.id %}
               class="active"
               aria-current="page"
             {% endif %}
@@ -27,7 +27,14 @@
         <label for="q" class="sr-only">
           {{ 'liquid.partials.product_search.search_placeholder' | translate }}
         </label>
-        <input type="search" id="q" name="q" placeholder="{{ 'liquid.partials.product_search.search_placeholder' | translate }}" value="{{ page.search_query }}" class="form__control form__control-search"/>
+        <input
+          type="search"
+          id="q"
+          name="q"
+          placeholder="{{ 'liquid.partials.product_search.search_placeholder' | translate }}"
+          value="{{ page.search_query }}"
+          class="form__control form__control-search"
+        />
       </div>
     </div>
   </form>

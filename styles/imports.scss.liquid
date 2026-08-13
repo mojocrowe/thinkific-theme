@@ -166,6 +166,7 @@ $body__font-family: '{{ theme.settings.body_font }}', sans-serif !default;
 $body__font-size: {{ theme.settings.body_size_desktop }} !default;
 $body__font-size--mobile: {{ theme.settings.body_size_mobile }} !default;
 $body__font-weight: {{ theme.settings.body_weight }} !default;
+$body__letter-spacing: ({{ theme.settings.body_letter_spacing }} / 100%) * 1em !default;
 $body__line-height: 1.5 !default;
 
 // Buttons
@@ -178,6 +179,7 @@ $button__font-family: '{{ theme.settings.button_font }}', sans-serif !default;
 $button__font-size: {{ theme.settings.button_size_desktop }} !default;
 $button__font-size--mobile: {{ theme.settings.button_size_mobile }} !default;
 $button__font-weight: {{ theme.settings.button_weight }} !default;
+$button__letter-spacing: ({{ theme.settings.button_letter_spacing }} / 100%) * 1em !default;
 
 // Primary Buttons
 {% if theme.settings.primary_button_style != "outline" and theme.settings.primary_button_style != "outline_with_fill" %}
@@ -292,6 +294,7 @@ $banner__font-family: '{{ theme.settings.banner_font }}', sans-serif !default;
 $banner__font-weight: {{ theme.settings.banner_weight }} !default;
 $banner__font-size: {{ theme.settings.banner_size_desktop }} !default;
 $banner__font-size--mobile: {{ theme.settings.banner_size_mobile }} !default;
+$banner__letter-spacing: ({{ theme.settings.banner_letter_spacing }} / 100%) * 1em !default;
 $banner__line-height: 1.35 !default;
 
 // Headings
@@ -300,17 +303,20 @@ $heading__font-family: '{{ theme.settings.heading_font }}', sans-serif !default;
 $heading__font-size: {{ theme.settings.heading_size_desktop }} !default;
 $heading__font-size--mobile: {{ theme.settings.heading_size_mobile }} !default;
 $heading__font-weight: {{ theme.settings.heading_weight }} !default;
+$heading__letter-spacing: ({{ theme.settings.heading_letter_spacing }} / 100%) * 1em !default;
 $heading__line-height: 1.35 !default;
 
 $subheading__font-family: '{{ theme.settings.subheading_font }}', sans-serif !default;
 $subheading__font-size: {{ theme.settings.subheading_size_desktop }} !default;
 $subheading__font-size--mobile: {{ theme.settings.subheading_size_mobile }} !default;
 $subheading__font-weight: {{ theme.settings.subheading_weight }} !default;
+$subheading__letter-spacing: ({{ theme.settings.subheading_letter_spacing }} / 100%) * 1em !default;
 
 $secondary-heading__font-family: '{{ theme.settings.secondary_heading_font }}', sans-serif !default;
 $secondary-heading__font-size: {{ theme.settings.secondary_heading_size_desktop }} !default;
 $secondary-heading__font-size--mobile: {{ theme.settings.secondary_heading_size_mobile }} !default;
 $secondary-heading__font-weight: {{ theme.settings.secondary_heading_weight }} !default;
+$secondary-heading__letter-spacing: ({{ theme.settings.secondary_heading_letter_spacing }} / 100%) * 1em !default;
 
 // Interface
 $interface__background-color: $card__background-color !default;

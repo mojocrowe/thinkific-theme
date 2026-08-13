@@ -10,7 +10,9 @@
     <div class="my-account__wrapper">
       {% include 'my_account_menu' %}
       <main class="my-account__content" id="main-content" role="main">
-        <h2 class="my-account__heading">{{ 'liquid.views.my_account_certificates_page.header_my_certificates' | translate }}</h2>
+        <h2 class="my-account__heading">
+          {{ 'liquid.views.my_account_certificates_page.header_my_certificates' | translate }}
+        </h2>
         {% if site.current_user.has_certificates %}
           <p>{{ 'liquid.views.my_account_certificates_page.table.header_certificates' | translate }}</p>
           <table class="my-account__certificates table--responsive">
@@ -35,6 +37,7 @@
               {% endfor %}
             </tbody>
           </table>
+
         {% else %}
           <p class="my-account__no-certificates">
             {{ 'liquid.views.my_account_certificates_page.msg_no_certificates' | translate }}

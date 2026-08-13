@@ -22,12 +22,12 @@
     </div>
     <div class="card__body-container">
       <div class="card__body">
-      lol
+        lol
         {% if section.settings.show_category_name %}
           <p class="card__category">
             {% for collection in product.collections %}
               {% if forloop.last == false %}
-                {{ collection.name | append: ", " }}
+                {{ collection.name | append: ', ' }}
               {% else %}
                 {{ collection.name }}
               {% endif %}
