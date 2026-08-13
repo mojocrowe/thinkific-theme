@@ -2,7 +2,7 @@
   "info": {
     "name": "Mojo Crowe",
     "author": "Mojo Crowe",
-    "version": "1.0.63",
+    "version": "1.0.84",
     "documentation_url": "https://mojocrowe.com/",
     "support_url": "https://mojocrowe.com/"
   },
@@ -252,8 +252,13 @@
           "type": "font_select",
           "id": "banner_font",
           "label": "Font",
-          "default": "PPNeueMontreal",
+          "default": "Avantt",
           "options": [
+            {
+              "value": "Avantt",
+              "label": "Avantt",
+              "group": "Sans-serif"
+            },
             {
               "value": "Abel",
               "label": "Abel",
@@ -461,7 +466,7 @@
           "type": "select",
           "id": "banner_weight",
           "label": "Weight",
-          "default": "700",
+          "default": "900",
           "options": [
             {
               "value": "100",
@@ -503,6 +508,11 @@
           "label": "Font",
           "default": "PPNeueMontreal",
           "options": [
+            {
+              "value": "Avantt",
+              "label": "Avantt",
+              "group": "Sans-serif"
+            },
             {
               "value": "Abel",
               "label": "Abel",
@@ -753,6 +763,11 @@
           "default": "Concrette M",
           "options": [
             {
+              "value": "Avantt",
+              "label": "Avantt",
+              "group": "Sans-serif"
+            },
+            {
               "value": "Abel",
               "label": "Abel",
               "group": "Sans-serif"
@@ -1001,6 +1016,11 @@
           "label": "Font",
           "default": "Concrette M",
           "options": [
+            {
+              "value": "Avantt",
+              "label": "Avantt",
+              "group": "Sans-serif"
+            },
             {
               "value": "Abel",
               "label": "Abel",
@@ -1251,6 +1271,11 @@
           "default": "Concrette M",
           "options": [
             {
+              "value": "Avantt",
+              "label": "Avantt",
+              "group": "Sans-serif"
+            },
+            {
               "value": "Abel",
               "label": "Abel",
               "group": "Sans-serif"
@@ -1451,6 +1476,11 @@
           "label": "Font",
           "default": "Source Sans Pro",
           "options": [
+            {
+              "value": "Avantt",
+              "label": "Avantt",
+              "group": "Sans-serif"
+            },
             {
               "value": "Abel",
               "label": "Abel",
