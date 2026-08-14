@@ -2,7 +2,7 @@
   "info": {
     "name": "Mojo Crowe",
     "author": "Mojo Crowe",
-    "version": "1.0.93",
+    "version": "1.0.104",
     "documentation_url": "https://mojocrowe.com/",
     "support_url": "https://mojocrowe.com/"
   },
@@ -2018,9 +2018,9 @@
         "secondary_button_style": "outline",
         "secondary_button_shape": "square",
         "accent_color": "#212326",
-        "banner_font": "PPNeueMontreal",
+        "banner_font": "Avantt",
         "banner_size_desktop": "40px",
-        "banner_weight": "700",
+        "banner_weight": "900",
         "banner_letter_spacing": "-3%",
         "heading_font": "Avantt",
         "heading_size_desktop": "40px",

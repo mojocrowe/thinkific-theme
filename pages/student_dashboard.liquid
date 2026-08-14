@@ -4,27 +4,6 @@
   Completed, In Progress or Expired.
 {% endcomment %}
 
-<script>
-  (function () {
-    const referrer = document.referrer;
-    const redirectPath = sessionStorage.getItem('preScormPageTemp');
-
-    // If the user came from SCORM and we have a stable redirect path that isn't the dashboard
-    if (
-      referrer.includes('/scorm/player/') &&
-      window.location.pathname === '/enrollments' &&
-      redirectPath &&
-      redirectPath !== '/enrollments'
-    ) {
-      // Optional: prevent infinite redirect loops
-      if (!sessionStorage.getItem('scormRedirected')) {
-        sessionStorage.setItem('scormRedirected', 'true');
-        window.location.href = redirectPath;
-      }
-    }
-  })();
-</script>
-
 <main class="student-dashboard" id="main-content" role="main">
   {% section 'student_dashboard' %}
   {{ content_for_page }}

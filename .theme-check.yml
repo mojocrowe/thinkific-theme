@@ -4,3 +4,13 @@ TranslationKeyExists:
   enabled: false
 ValidSchema:
   enabled: false
+ParserBlockingScript:
+  enabled: false
+UndefinedObject:
+  enabled: false
+UnknownFilter:
+  enabled: false
+RemoteAsset:
+  enabled: false
+SchemaSectionOrBlockOnly:
+  enabled: false
