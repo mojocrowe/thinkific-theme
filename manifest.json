@@ -2,7 +2,7 @@
   "info": {
     "name": "Mojo Crowe",
     "author": "Mojo Crowe",
-    "version": "1.0.104",
+    "version": "1.0.108",
     "documentation_url": "https://mojocrowe.com/",
     "support_url": "https://mojocrowe.com/"
   },
@@ -1504,7 +1504,7 @@
           "type": "font_select",
           "id": "button_font",
           "label": "Font",
-          "default": "Source Sans Pro",
+          "default": "Avantt",
           "options": [
             {
               "value": "Avantt",
@@ -1670,7 +1670,7 @@
           "type": "select",
           "id": "button_weight",
           "label": "Weight",
-          "default": "400",
+          "default": "700",
           "options": [
             {
               "value": "100",
@@ -1706,7 +1706,7 @@
           "type": "text",
           "id": "button_letter_spacing",
           "label": "Letter spacing",
-          "default": "0%"
+          "default": "-1%"
         }
       ]
     },
@@ -1992,7 +1992,7 @@
     }
   ],
   "presets": {
-    "parker": {
+    "mojo": {
       "title": "Mojo",
       "description": "",
       "settings": {
@@ -2038,10 +2038,10 @@
         "body_size_desktop": "18px",
         "body_weight": "400",
         "body_letter_spacing": "3%",
-        "button_font": "Concrette M",
+        "button_font": "Avantt",
         "button_size_desktop": "18px",
-        "button_weight": "600",
-        "button_letter_spacing": "0%",
+        "button_weight": "700",
+        "button_letter_spacing": "-1%",
         "banner_size_mobile": "36px",
         "heading_size_mobile": "32px",
         "subheading_size_mobile": "20px",

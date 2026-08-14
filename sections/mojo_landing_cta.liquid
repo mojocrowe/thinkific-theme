@@ -1,0 +1,20 @@
+<div class="cta" data-preview-item="home-cta">
+  <h1>Ready to shift your perspective?</h1>
+  <a href="/enrollments" class="button-primary">
+    {% if site.current_user.signed_in %}
+      View my programs
+    {% else %}
+      Sign in
+    {% endif %}
+  </a>
+</div>
+
+{% schema %}
+{
+  "label": "Mojo landing CTA",
+  "description": "Direct visitors to sign in or view their programs.",
+  "previewImageUrl": "",
+  "previewDescription": "",
+  "settings": []
+}
+{% endschema %}

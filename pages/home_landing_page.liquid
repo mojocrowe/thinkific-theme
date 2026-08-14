@@ -3,16 +3,6 @@
 {% endcomment %}
 
 <main class="home" id="main-content" role="main" style="background-color: #ffffff">
-  <div class="cta">
-    <h1>Ready to shift your perspective?</h1>
-    <a href="/enrollments" class="button-primary">
-      {% if site.current_user.signed_in %}
-        View my programs
-      {% else %}
-        Sign in
-      {% endif %}
-    </a>
-  </div>
   {{ content_for_page }}
 </main>
 
@@ -24,6 +14,7 @@
       "course_cards_all",
       "banner",
       "bonus",
+      "mojo_landing_cta",
       "call_to_action",
       "course_categories_all",
       "course_categories",
@@ -44,7 +35,7 @@
       "upsells",
       "video"
     ],
-    "defaults": []
+    "defaults": ["mojo_landing_cta"]
   }
 }
 {% endschema %}
