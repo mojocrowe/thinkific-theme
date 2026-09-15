@@ -2,7 +2,7 @@
   "info": {
     "name": "Mojo Crowe",
     "author": "Mojo Crowe",
-    "version": "1.0.109",
+    "version": "1.0.110",
     "documentation_url": "https://mojocrowe.com/",
     "support_url": "https://mojocrowe.com/"
   },
@@ -2030,10 +2030,10 @@
         "subheading_size_desktop": "24px",
         "subheading_weight": "400",
         "subheading_letter_spacing": "3%",
-        "secondary_heading_font": "Concrette M",
-        "secondary_heading_size_desktop": "22px",
+        "secondary_heading_font": "PPNeueMontreal",
+        "secondary_heading_size_desktop": "28px",
         "secondary_heading_weight": "400",
-        "secondary_heading_letter_spacing": "0%",
+        "secondary_heading_letter_spacing": "3%",
         "body_font": "PPNeueMontreal",
         "body_size_desktop": "18px",
         "body_weight": "400",
