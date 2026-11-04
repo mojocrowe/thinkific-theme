@@ -1,5 +1,5 @@
 /**
- * Include the module number in view module links.
+ * Include the module number in view module links for accessibility reasons.
  */
 (function () {
   if (!window.location.pathname.includes("/bundles/")) {
