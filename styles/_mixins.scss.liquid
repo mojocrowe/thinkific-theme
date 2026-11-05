@@ -253,22 +253,20 @@
 
 // Container
 @mixin make-container($add-padding: true) {
-  @include screen-md-min {
-    max-width: $screen-md;
-  }
-  @include screen-lg-min {
-    max-width: $screen-lg;
-  }
-  @include screen-xl-min {
-    max-width: $screen-xl;
-  }
+  max-width: 1570px;
 
   position: relative;
   width: 100%;
   margin: 0 auto;
+
   @if $add-padding == true {
-    padding-right: $gutter-width / 2;
-    padding-left: $gutter-width / 2;
+    padding-right: 64px;
+    padding-left: 64px;
+
+    @media (max-width: $screen-md) {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
   }
 }
 
