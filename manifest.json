@@ -2,7 +2,7 @@
   "info": {
     "name": "Mojo Crowe",
     "author": "Mojo Crowe",
-    "version": "1.0.122",
+    "version": "1.0.123",
     "documentation_url": "https://mojocrowe.com/",
     "support_url": "https://mojocrowe.com/"
   },
@@ -1996,7 +1996,7 @@
       "title": "Mojo",
       "description": "",
       "settings": {
-        "menu_background_color": "#FFFFFF",
+        "menu_background_color": "rgba(255, 255, 255, 0.85)",
         "menu_link_color": "#212326",
         "menu_floating_link_color": "#212326",
         "background_color": "#FFFFFF",
