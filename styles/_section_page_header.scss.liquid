@@ -2,7 +2,7 @@
 // ======================================
 
 .header {
-  @include transition(background-color 400ms ease, box-shadow 200ms ease);
+  @include transition(background 400ms ease, box-shadow 200ms ease);
 
   position: relative;
   border-bottom: $interface__border;
@@ -19,11 +19,9 @@
   .student-dashboard &,
   .student-certificate-page &,
   .collections-landing-page & {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); // sass-lint:disable-line no-color-literals
-
     &.fixed {
       @include screen-md-min {
-        @include transition(background-color 400ms ease, box-shadow 200ms ease);
+        @include transition(background 400ms ease, box-shadow 200ms ease);
 
         position: fixed;
         top: 0;
@@ -31,8 +29,7 @@
         left: 0;
         width: 100%;
         margin: 0 auto;
-        background-color: $nav__fixed-background-color;
-        box-shadow: $shadow-menu;
+        background: $nav__fixed-background-color;
 
         &:not([data-menu-style="floating"]) {
           .header__nav-item,
