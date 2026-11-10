@@ -1,0 +1,309 @@
+// Shared surfaces for the dashboard and Kapow learning pathways.
+// Kapow inserts section-ID rules after theme CSS, including !important utility
+// rules. Use the stable main-content ID and narrowly scoped !important values
+// so these styles survive that load order without targeting generated IDs.
+$mojo-card-border: #dddddd;
+// Fallbacks retain the existing appearance for sites with older saved settings.
+$mojo-dashboard-header-background: {{ theme.settings.dashboard_header_background_color | default: '#FFFFFF' }};
+$mojo-dashboard-background: {{ theme.settings.dashboard_background_color | default: '#F1F1F1' }};
+$mojo-program-background: {{ theme.settings.program_background_color | default: '#F1F1F1' }};
+
+#main-content.student-dashboard {
+  background: $mojo-dashboard-background;
+  .banner, .student-dashboard__banner {
+    background-color: $mojo-dashboard-header-background !important;
+  }
+  .kapow-spa { background: transparent !important; }
+  .kapow-spa .resource-card .card-inner {
+    height: 100%;
+    background: $mojo-paper !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    overflow: hidden;
+    transition: none;
+    &:hover, &:focus-within {
+      background: $mojo-paper !important;
+      box-shadow: none !important;
+    }
+  }
+  .kapow-spa .kapow-card-content { padding: 24px !important; }
+  .kapow-spa .kapow-card-content .wrapper { padding: 0 !important; }
+  .kapow-spa .card-heading { margin: 0 !important; }
+  .kapow-spa .card-heading a {
+    display: inline-block;
+    color: $mojo-ink;
+    text-decoration: none;
+    &:hover, &:focus { color: $mojo-ink; }
+  }
+  .kapow-spa .card-description { margin-top: 12px !important; }
+  .kapow-spa .resource-card .img img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+}
+
+#main-content .kapow-spt {
+  background: $mojo-program-background !important;
+  color: $mojo-ink;
+  --colors-gray-light: 210, 210, 210 !important;
+  .main-section { background: $mojo-program-background !important; }
+  .banner-section { background: $mojo-program-background !important; }
+  .main-section > section > .container {
+    width: 90%;
+    max-width: 1200px !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .content-background {
+    background: $mojo-paper !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+  }
+  // Program overview and module cards use the same padding and corners.
+  .content-background.p-4 { padding: 32px !important; }
+  .content-background.p-3 { padding: 24px !important; }
+  .content-background img.img-fluid {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 6px !important;
+  }
+  .main-section h1.content-text {
+    font-family: $mojo-heading !important;
+    font-size: 36px !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.01em !important;
+  }
+  h4.content-text.leading-7 {
+    margin-bottom: 16px !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+  }
+  p.content-text {
+    font-family: $mojo-body !important;
+    color: $mojo-ink !important;
+    font-size: 16px !important;
+    letter-spacing: 0.03em;
+    line-height: 1.5 !important;
+  }
+  .color-banner-subheading { display: none !important; }
+  .color-back-link { color: $mojo-ink !important; }
+  a:hover .color-back-link, a:focus .color-back-link { color: $mojo-blue !important; }
+  .bg-im-misc-free, .bg-im-misc-pro, .bg-im-primary-blue-300 {
+    background: $mojo-blue !important;
+    color: $mojo-paper !important;
+  }
+  .bg-im-misc-free i { color: $mojo-paper !important; }
+  .text-im-primary-gray-400 { color: #505050 !important; }
+  .border-gray-light { border-color: $mojo-card-border !important; }
+  .bg-custom-gray-100 { background: $mojo-paper !important; }
+  .list-item-icon { color: $mojo-blue !important; }
+
+  // Only turn text module links into buttons; thumbnail links remain images.
+  p.mt-4 > a[href*='/courses/take/'] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    max-width: 100%;
+    min-height: 44px;
+    padding: 12px 24px;
+    background: $mojo-ink;
+    transition: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: $mojo-paper !important;
+    font-family: $mojo-heading !important;
+    font-size: 14px !important;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    &:hover, &:focus {
+      transition: none;
+      background: $mojo-black-hover;
+      color: $mojo-paper !important;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #main-content.student-dashboard .kapow-spa .kapow-card-content {
+    padding: 20px !important;
+  }
+  #main-content .kapow-spt {
+    .main-section > section > .container { width: 100%; padding-right: 16px; padding-left: 16px; }
+    .content-background.p-4 { padding: 20px !important; }
+    .content-background.p-3 { padding: 16px !important; }
+    .main-section h1.content-text { font-size: 28px !important; }
+    h4.content-text.leading-7 { font-size: 20px !important; }
+    // Bootstrap's mt-sm-0 takes effect later than the column stack breakpoint.
+    .content-background .col-md-8 { margin-top: 20px !important; }
+    p.mt-4 > a[href*='/courses/take/'] { width: 100%; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #main-content.student-dashboard .kapow-spa .resource-card .card-inner { transition: none; }
+}
+
+@media (min-width: 768px) {
+  #main-content .kapow-spt .content-background.p-4 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 32px;
+    grid-template-rows: auto 1fr;
+    > .row:first-child {
+      grid-column: 1;
+      grid-row: 1;
+      margin: 0;
+      align-self: start;
+      align-content: start;
+    }
+    > .row:last-child {
+      display: contents !important;
+      > .col-md-6 {
+        width: auto;
+        padding: 0;
+        &:first-child { grid-column: 1; grid-row: 2; }
+        &:last-child {
+          grid-column: 2;
+          grid-row: 1 / span 2;
+          .mt-3 { margin-top: 0 !important; }
+        }
+      }
+    }
+  }
+}
+
+// The plugin's Bootstrap columns are presentation rules and can be overridden
+// without changing its filtering, pagination or enrolment logic.
+#main-content.student-dashboard {
+  .banner__wrapper { padding-top: 32px !important; padding-bottom: 32px !important; }
+  .section__headings { margin-bottom: 0; }
+  .section__subheading { margin-top: 16px; }
+  .kapow-spa > .kapow-section { padding-top: 40px !important; padding-bottom: 40px !important; }
+  .kapow-resource-list {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin: 0 !important;
+    > .resource-card {
+      width: auto !important;
+      max-width: none !important;
+      min-width: 0;
+      flex: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+  .kapow-spa .card-inner, .kapow-spa .card-inner:hover {
+    border: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    background: $mojo-paper !important;
+  }
+  .kapow-spa .card-heading a, .kapow-spa .card-heading a:hover,
+  .kapow-spa .card-heading a:focus { color: $mojo-ink !important; }
+  .kapow-spa p.card-description {
+    display: block !important;
+    max-height: none !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+  }
+  .mojo-program-action { margin-top: 20px; }
+}
+#main-content .kapow-spt {
+  --colors-im-misc-free: 40, 40, 214 !important;
+  --colors-im-misc-pro: 40, 40, 214 !important;
+  .content-background { border: 0 !important; }
+}
+.mojo-password-toggle {
+  display: inline-block;
+  min-height: 44px;
+  margin-top: 4px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: $mojo-ink;
+  font-family: $mojo-body;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.mojo-mobile-account-nav { display: none; }
+@media (min-width: 768px) and (max-width: 1023px) {
+  #main-content.student-dashboard .kapow-resource-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  #main-content.student-dashboard {
+    .kapow-resource-list { grid-template-columns: minmax(0, 1fr); }
+    .banner__wrapper { padding-top: 24px !important; padding-bottom: 24px !important; }
+    .kapow-spa > .kapow-section { padding-top: 24px !important; }
+  }
+  #main-content .kapow-spt {
+    // Shorter thumbnails keep the module title and action in view sooner.
+    .content-background.p-3 img.img-fluid { aspect-ratio: 2 / 1; }
+    .content-background.p-4 img.img-fluid { max-height: 160px; object-fit: contain; }
+  }
+  .header__mobile-button {
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+  }
+  .mojo-mobile-account-nav {
+    display: block;
+    width: 100%;
+    margin-bottom: 24px;
+    label { display: block; margin-bottom: 8px; font-weight: 500; }
+    select { width: 100%; }
+  }
+  .my-account__menu.mojo-has-mobile-selector { display: none; }
+  .my-account__content { order: 1; }
+}
+#main-content.student-dashboard .kapow-spa {
+  .resource-card .card-inner { display: flex; flex-direction: column; }
+  .kapow-card-content, .kapow-card-content .wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  p.card-description { margin-bottom: 24px !important; }
+  .mojo-program-action { margin-top: auto; align-self: flex-start; }
+}
+@media (max-width: 767px) {
+  .mojo-mobile-account-nav { padding-right: 16px; padding-left: 16px; }
+}
+
+// Brand titles use uppercase without changing stored content or link names.
+#main-content.student-dashboard .kapow-spa .card-heading a,
+#main-content .kapow-spt .main-section h1.content-text,
+#main-content .kapow-spt h4.content-text.leading-7,
+.card__name {
+  text-transform: uppercase;
+}
+
+// Card CTAs follow the marketing site's black button treatment.
+#main-content.student-dashboard .mojo-program-action,
+.card .button-primary {
+  background: $mojo-ink;
+  color: $mojo-paper;
+  &:hover, &:focus, &:active {
+    background: $mojo-black-hover;
+    color: $mojo-paper;
+  }
+}
+
+// Remove the overview heading row's Bootstrap gutters, keeping its title
+// aligned with the description and preserving the card's outer padding.
+#main-content .kapow-spt .content-background.p-4 > .row:first-child {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  > * { padding-left: 0 !important; padding-right: 0 !important; }
+}

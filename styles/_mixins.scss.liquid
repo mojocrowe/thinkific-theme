@@ -512,6 +512,7 @@
 // Override transition mixin due to libsass issues
 // Details: https://github.com/thoughtbot/bourbon/issues/794
 @mixin transition($properties...) {
+  $spec: ();
   @if length($properties) > 1 {
     $spec: ();
     @for $i from 1 through length($properties) {

@@ -42,6 +42,8 @@
           <p class="my-account__no-certificates">
             {{ 'liquid.views.my_account_certificates_page.msg_no_certificates' | translate }}
           </p>
+          <p>Certificates for eligible programs appear here once you complete the required modules.</p>
+          <a class="button button-primary" href="{{ site.student_dashboard_url | default: '/enrollments' }}">View my programs</a>
         {% endif %}
       </main>
     </div>

@@ -99,6 +99,9 @@
       </title>
     {% endif %}
 
+  {% when 'password_reset_request_page' %}
+    {% if page.seo_title == blank %}<title>Reset password - {{ site_title }}</title>{% endif %}
+
   {% when 'sign_up_page' %}
     {% if page.seo_title == blank %}
       <title>

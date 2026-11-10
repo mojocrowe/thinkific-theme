@@ -9,6 +9,8 @@
             </a>
           </li>
         {% endfor %}
+        {% assign support_url = theme.settings.learner_support_url | default: 'https://mojocrowe.com/contact' %}
+        <li class="footer__nav-item"><a href="{{ support_url | escape }}">{{ theme.settings.learner_support_label | default: 'Need help?' | escape }}</a></li>
       </ul>
       {% if section.settings.social_icon != blank and section.settings.social_link != blank %}
         {% assign footer_social_link = true %}

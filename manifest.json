@@ -2,7 +2,7 @@
   "info": {
     "name": "Mojo Crowe",
     "author": "Mojo Crowe",
-    "version": "1.0.124",
+    "version": "1.0.137",
     "documentation_url": "https://mojocrowe.com/",
     "support_url": "https://mojocrowe.com/"
   },
@@ -41,13 +41,13 @@
           "type": "color",
           "id": "menu_link_color",
           "label": "Link",
-          "default": "#212326"
+          "default": "#000000"
         },
         {
           "type": "color",
           "id": "menu_floating_link_color",
           "label": "Transparent header menu link",
-          "default": "#212326"
+          "default": "#FFFFFF"
         },
         {
           "type": "header",
@@ -63,25 +63,43 @@
           "type": "color",
           "id": "background_color_2",
           "label": "Page (Secondary)",
-          "default": "#F8F8FF"
+          "default": "#F1F1F1"
         },
         {
           "type": "color",
           "id": "background_color_3",
           "label": "Page (Tertiary)",
-          "default": "#89AFB3"
+          "default": "#F1F1F1"
+        },
+        {
+          "type": "color",
+          "id": "dashboard_background_color",
+          "label": "Dashboard page",
+          "default": "#F1F1F1"
+        },
+        {
+          "type": "color",
+          "id": "dashboard_header_background_color",
+          "label": "Dashboard heading area",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "program_background_color",
+          "label": "Program page",
+          "default": "#F1F1F1"
         },
         {
           "type": "color",
           "id": "card_background_color",
           "label": "Box",
-          "default": "#FFFFFF"
+          "default": "#F1F1F1"
         },
         {
           "type": "color",
           "id": "card_background_hover_color",
           "label": "Box (Hover)",
-          "default": "#F8F2E9"
+          "default": "#E8E8E8"
         },
         {
           "type": "header",
@@ -91,19 +109,19 @@
           "type": "color",
           "id": "heading_color",
           "label": "Headings",
-          "default": "#212326"
+          "default": "#000000"
         },
         {
           "type": "color",
           "id": "text_color",
           "label": "Body",
-          "default": "#212326"
+          "default": "#000000"
         },
         {
           "type": "color",
           "id": "link_color",
           "label": "Link",
-          "default": "#6F7282"
+          "default": "#2828D6"
         },
         {
           "type": "header",
@@ -113,13 +131,13 @@
           "type": "color",
           "id": "primary_button_background_color",
           "label": "Background",
-          "default": "#1E1C27"
+          "default": "#2828D6"
         },
         {
           "type": "color",
           "id": "primary_button_outline_color",
           "label": "Outline color",
-          "default": "#1E1C27"
+          "default": "#2828D6"
         },
         {
           "type": "color",
@@ -151,7 +169,7 @@
           "type": "select",
           "id": "primary_button_shape",
           "label": "Button shape",
-          "default": "square",
+          "default": "rounded",
           "options": [
             {
               "value": "square",
@@ -175,25 +193,25 @@
           "type": "color",
           "id": "secondary_button_background_color",
           "label": "Secondary background",
-          "default": "#FCF5EC"
+          "default": "#000000"
         },
         {
           "type": "color",
           "id": "secondary_button_outline_color",
           "label": "Outline color",
-          "default": "#1E1C27"
+          "default": "#000000"
         },
         {
           "type": "color",
           "id": "secondary_button_text_color",
           "label": "Secondary text",
-          "default": "#212326"
+          "default": "#FFFFFF"
         },
         {
           "type": "radio",
           "id": "secondary_button_style",
           "label": "Style",
-          "default": "outline",
+          "default": "solid",
           "options": [
             {
               "value": "solid",
@@ -237,7 +255,7 @@
           "type": "color",
           "id": "accent_color",
           "label": "Primary",
-          "default": "#212326"
+          "default": "#2828D6"
         }
       ]
     },
@@ -390,7 +408,7 @@
           "type": "select",
           "id": "banner_size_desktop",
           "label": "Size",
-          "default": "40px",
+          "default": "36px",
           "options": [
             {
               "value": "14px",
@@ -466,7 +484,7 @@
           "type": "select",
           "id": "banner_weight",
           "label": "Weight",
-          "default": "900",
+          "default": "600",
           "options": [
             {
               "value": "100",
@@ -502,7 +520,7 @@
           "type": "text",
           "id": "banner_letter_spacing",
           "label": "Letter spacing",
-          "default": "-3%"
+          "default": "-1%"
         },
         {
           "type": "header",
@@ -650,7 +668,7 @@
           "type": "select",
           "id": "heading_size_desktop",
           "label": "Size",
-          "default": "40px",
+          "default": "36px",
           "options": [
             {
               "value": "14px",
@@ -726,7 +744,7 @@
           "type": "select",
           "id": "heading_weight",
           "label": "Weight",
-          "default": "900",
+          "default": "600",
           "options": [
             {
               "value": "100",
@@ -762,7 +780,7 @@
           "type": "text",
           "id": "heading_letter_spacing",
           "label": "Letter spacing",
-          "default": "-3%"
+          "default": "-1%"
         },
         {
           "type": "header",
@@ -910,7 +928,7 @@
           "type": "select",
           "id": "subheading_size_desktop",
           "label": "Size",
-          "default": "24px",
+          "default": "20px",
           "options": [
             {
               "value": "14px",
@@ -1032,7 +1050,7 @@
           "type": "font_select",
           "id": "secondary_heading_font",
           "label": "Font",
-          "default": "PPNeueMontreal",
+          "default": "Avantt",
           "options": [
             {
               "value": "Avantt",
@@ -1170,7 +1188,7 @@
           "type": "select",
           "id": "secondary_heading_size_desktop",
           "label": "Size",
-          "default": "22px",
+          "default": "24px",
           "options": [
             {
               "value": "14px",
@@ -1246,7 +1264,7 @@
           "type": "select",
           "id": "secondary_heading_weight",
           "label": "Weight",
-          "default": "400",
+          "default": "700",
           "options": [
             {
               "value": "100",
@@ -1282,7 +1300,7 @@
           "type": "text",
           "id": "secondary_heading_letter_spacing",
           "label": "Letter spacing",
-          "default": "3%"
+          "default": "-1%"
         },
         {
           "type": "header",
@@ -1430,7 +1448,7 @@
           "type": "select",
           "id": "body_size_desktop",
           "label": "Size",
-          "default": "18px",
+          "default": "16px",
           "options": [
             {
               "value": "14px",
@@ -1642,7 +1660,7 @@
           "type": "select",
           "id": "button_size_desktop",
           "label": "Size",
-          "default": "18px",
+          "default": "14px",
           "options": [
             {
               "value": "14px",
@@ -1717,7 +1735,7 @@
           "type": "select",
           "id": "banner_size_mobile",
           "label": "Banner size",
-          "default": "36px",
+          "default": "32px",
           "options": [
             {
               "value": "14px",
@@ -1769,7 +1787,7 @@
           "type": "select",
           "id": "heading_size_mobile",
           "label": "Heading size",
-          "default": "32px",
+          "default": "28px",
           "options": [
             {
               "value": "14px",
@@ -1821,7 +1839,7 @@
           "type": "select",
           "id": "subheading_size_mobile",
           "label": "Subheading size",
-          "default": "20px",
+          "default": "18px",
           "options": [
             {
               "value": "14px",
@@ -1953,7 +1971,7 @@
           "type": "select",
           "id": "button_size_mobile",
           "label": "Button size",
-          "default": "16px",
+          "default": "14px",
           "options": [
             {
               "value": "14px",
@@ -1989,6 +2007,23 @@
           "default": "//mojocrowe.com/favicon.ico"
         }
       ]
+    },
+    {
+      "label": "Learner support",
+      "settings": [
+        {
+          "type": "text",
+          "id": "learner_support_url",
+          "label": "Help link",
+          "default": "https://mojocrowe.com/contact"
+        },
+        {
+          "type": "text",
+          "id": "learner_support_label",
+          "label": "Help link text",
+          "default": "Need help?"
+        }
+      ]
     }
   ],
   "presets": {
@@ -1997,58 +2032,63 @@
       "description": "",
       "settings": {
         "menu_background_color": "rgba(255, 255, 255, 0.85)",
-        "menu_link_color": "#212326",
-        "menu_floating_link_color": "#212326",
+        "menu_link_color": "#000000",
+        "menu_floating_link_color": "#FFFFFF",
         "background_color": "#FFFFFF",
-        "background_color_2": "#F8F8FF",
-        "background_color_3": "#89AFB3",
-        "card_background_color": "#FFFFFF",
-        "card_background_hover_color": "#F8F2E9",
-        "heading_color": "#212326",
-        "text_color": "#212326",
-        "link_color": "#6F7282",
-        "primary_button_background_color": "#1E1C27",
-        "primary_button_outline_color": "#1E1C27",
+        "background_color_2": "#F1F1F1",
+        "background_color_3": "#F1F1F1",
+        "card_background_color": "#F1F1F1",
+        "card_background_hover_color": "#E8E8E8",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "link_color": "#2828D6",
+        "primary_button_background_color": "#2828D6",
+        "primary_button_outline_color": "#2828D6",
         "primary_button_text_color": "#FFFFFF",
         "primary_button_style": "solid",
-        "primary_button_shape": "square",
-        "secondary_button_background_color": "#FCF5EC",
-        "secondary_button_outline_color": "#1E1C27",
-        "secondary_button_text_color": "#1E1C27",
-        "secondary_button_style": "outline",
-        "secondary_button_shape": "square",
-        "accent_color": "#212326",
+        "primary_button_shape": "rounded",
+        "secondary_button_background_color": "#000000",
+        "secondary_button_outline_color": "#000000",
+        "secondary_button_text_color": "#FFFFFF",
+        "secondary_button_style": "solid",
+        "secondary_button_shape": "rounded",
+        "accent_color": "#2828D6",
         "banner_font": "Avantt",
-        "banner_size_desktop": "40px",
-        "banner_weight": "900",
-        "banner_letter_spacing": "-3%",
+        "banner_size_desktop": "36px",
+        "banner_weight": "600",
+        "banner_letter_spacing": "-1%",
         "heading_font": "Avantt",
-        "heading_size_desktop": "40px",
-        "heading_weight": "900",
-        "heading_letter_spacing": "-3%",
+        "heading_size_desktop": "36px",
+        "heading_weight": "600",
+        "heading_letter_spacing": "-1%",
         "subheading_font": "PPNeueMontreal",
-        "subheading_size_desktop": "24px",
+        "subheading_size_desktop": "20px",
         "subheading_weight": "400",
         "subheading_letter_spacing": "3%",
-        "secondary_heading_font": "PPNeueMontreal",
-        "secondary_heading_size_desktop": "28px",
-        "secondary_heading_weight": "400",
-        "secondary_heading_letter_spacing": "3%",
+        "secondary_heading_font": "Avantt",
+        "secondary_heading_size_desktop": "24px",
+        "secondary_heading_weight": "700",
+        "secondary_heading_letter_spacing": "-1%",
         "body_font": "PPNeueMontreal",
-        "body_size_desktop": "18px",
+        "body_size_desktop": "16px",
         "body_weight": "400",
         "body_letter_spacing": "3%",
         "button_font": "Avantt",
-        "button_size_desktop": "18px",
+        "button_size_desktop": "14px",
         "button_weight": "700",
         "button_letter_spacing": "-1%",
-        "banner_size_mobile": "36px",
-        "heading_size_mobile": "32px",
-        "subheading_size_mobile": "20px",
+        "banner_size_mobile": "32px",
+        "heading_size_mobile": "28px",
+        "subheading_size_mobile": "18px",
         "secondary_heading_size_mobile": "20px",
         "body_size_mobile": "16px",
-        "button_size_mobile": "16px",
-        "favicon": "//mojocrowe.com/favicon.ico"
+        "button_size_mobile": "14px",
+        "favicon": "//mojocrowe.com/favicon.ico",
+        "dashboard_background_color": "#F1F1F1",
+        "program_background_color": "#F1F1F1",
+        "dashboard_header_background_color": "#FFFFFF",
+        "learner_support_url": "https://mojocrowe.com/contact",
+        "learner_support_label": "Need help?"
       }
     }
   }

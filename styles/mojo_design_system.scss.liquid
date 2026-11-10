@@ -1,0 +1,277 @@
+// Observed at mojocrowe.com and /individuals, November 2026.
+// Explicit brand rules also update sites with previously saved theme settings.
+$mojo-ink: #000000;
+$mojo-paper: #ffffff;
+$mojo-surface: #f1f1f1;
+$mojo-blue: #2828d6;
+$mojo-blue-light: #d1e7ff;
+$mojo-black-hover: #707070;
+$mojo-heading: 'Avantt', 'Helvetica Neue', Arial, sans-serif;
+$mojo-body: 'PPNeueMontreal', 'Helvetica Neue', Arial, sans-serif;
+
+html { font-size: 16px; }
+body, input, select, textarea, label, legend {
+  font-family: $mojo-body;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+body {
+  background-color: $mojo-paper;
+  color: $mojo-ink;
+  font-size: 16px;
+  line-height: 1.5;
+}
+h1, h2, h3, h4, h5, h6, .page__heading, .section__heading,
+.my-account__heading, .password-reset__heading, .collections__heading,
+.course-review__heading {
+  font-family: $mojo-heading;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  text-transform: none;
+}
+.page__heading, .section__heading, .banner .section__heading,
+.my-account__heading, .password-reset__heading, .collections__heading,
+.course-review__heading {
+  font-family: $mojo-heading;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.section__heading--secondary {
+  font-size: 24px;
+  font-weight: 700;
+}
+.section__subheading {
+  font-family: $mojo-body;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+.section__headings { margin-bottom: 40px; }
+.banner__wrapper .section__heading { margin-bottom: 0; }
+.banner .section__subheading { margin-top: 40px; }
+a { color: $mojo-blue; }
+a:hover, a:focus { color: darken($mojo-blue, 12%); }
+
+// Keep .button-block and responsive purchase-button widths from the base theme.
+.button, .button-primary, .button-secondary {
+  max-width: 100%;
+  min-height: 44px;
+  padding: 12px 40px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: none;
+  font-family: $mojo-heading;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: normal;
+  transition: none;
+}
+.button-primary {
+  background: $mojo-blue;
+  color: $mojo-paper;
+  &:hover, &:focus, &:active {
+    transition: none;
+    background: $mojo-blue-light;
+    border-color: transparent;
+    color: $mojo-blue;
+    box-shadow: none;
+  }
+}
+.button-secondary {
+  background: $mojo-ink;
+  color: $mojo-paper;
+  &:hover, &:focus, &:active {
+    transition: none;
+    background: $mojo-black-hover;
+    border-color: transparent;
+    color: $mojo-paper;
+    box-shadow: none;
+  }
+}
+.button[disabled], .button[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+a:focus-visible, button:focus-visible, summary:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid $mojo-blue;
+  outline-offset: 3px;
+  // A white halo keeps the blue focus ring legible on blue sections.
+  box-shadow: 0 0 0 3px $mojo-paper;
+}
+
+.header {
+  min-height: 52px;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(8px);
+}
+// Marketing nav: ~51.9px desktop and 54px at its mobile breakpoint.
+// A shared inner minimum keeps signed-in avatars and signed-out links centred.
+.header__container {
+  display: flex;
+  align-items: center;
+  min-height: 51px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.header__wrapper { width: 100%; min-height: 51px; }
+@media (max-width: 768px) {
+  .header { min-height: 54px; }
+  .header__container, .header__wrapper { min-height: 53px; }
+}
+.header .header__nav-item > a:not(.button-secondary),
+.header .header__nav-item > button:not(.button-secondary) {
+  font-family: $mojo-heading;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+.header__nav-item .button-secondary { padding: 12px 16px; }
+.logo--default { filter: brightness(0); }
+// The mobile overlay uses a dark background, including on existing sites.
+.header[data-menu="open"] .header__logo img {
+  filter: brightness(0) invert(1);
+}
+
+.card {
+  border-radius: 10px;
+  background: $mojo-surface;
+  box-shadow: none;
+  &:hover, &:focus, &:active {
+    background: #e8e8e8;
+    box-shadow: none;
+  }
+}
+.card__body { padding: 24px; }
+.card__name {
+  font-family: $mojo-heading;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: $mojo-ink;
+}
+.card__description { font-size: 16px; line-height: 1.4; }
+.card__category {
+  font-family: $mojo-heading;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.card__price-container { padding: 0 24px 24px; }
+.form__control:not([type="checkbox"]):not([type="radio"]) {
+  min-height: 48px;
+  border: 1px solid $mojo-ink;
+  border-radius: 5px;
+  background: $mojo-paper;
+  color: $mojo-ink;
+  font-family: $mojo-body;
+  font-size: 16px;
+  line-height: 1.4;
+}
+// Override the base theme's square input hover state as well.
+input.form__control[type], select.form__control, textarea.form__control:not([type="checkbox"]):not([type="radio"]) {
+  border-radius: 5px;
+}
+.form__label { font-weight: 500; }
+.faq__list-item {
+  margin-bottom: 0;
+  padding: 24px 0;
+  border-bottom: 1px solid $mojo-ink;
+  strong {
+    font-family: $mojo-heading;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+}
+.footer {
+  padding-top: 56px;
+  padding-bottom: 40px;
+  background: $mojo-ink;
+  color: $mojo-paper;
+  .section__divide { background: $mojo-paper; }
+}
+.footer__nav-site a, .footer__nav-social a, .footer__white-label a {
+  color: $mojo-paper;
+  &:hover, &:focus { color: $mojo-paper; text-decoration: underline; }
+}
+.footer__nav-site a { font-family: $mojo-heading; font-size: 16px; font-weight: 700; }
+.footer__copyright, .footer__white-label { color: $mojo-paper; }
+
+// Third-party learning dashboard: observed card wrappers and typography.
+// Keep the integration's grid, progress tracking and link behaviour intact.
+.kapow-spa .resource-card .card-inner {
+  background-color: $mojo-surface;
+  border-radius: 10px;
+  box-shadow: none;
+  &:hover, &:focus-within {
+    background-color: #e8e8e8;
+    box-shadow: none;
+  }
+}
+.kapow-spa { background-color: $mojo-paper; }
+.kapow-spa .kapow-card-content .card-heading a,
+.kapow-spt .main-section h1.content-text,
+.kapow-spt h4.content-text.leading-7 {
+  font-family: $mojo-heading !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  text-transform: none;
+}
+.kapow-spa .kapow-card-content .card-heading a {
+  font-size: 24px;
+  font-weight: 700 !important;
+  line-height: 1.15;
+}
+.kapow-spa .kapow-card-content p.card-description,
+.kapow-spt p, .kapow-spt div.col-md-6.col-sm-12 {
+  font-family: $mojo-body !important;
+  font-size: 16px !important;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+.kapow-spt .main-section h1.content-text { font-size: 36px; }
+.kapow-spt h4.content-text.leading-7 { font-size: 24px !important; }
+.kapow-spt a[href*='/courses/take/'] { color: $mojo-blue; text-decoration: underline; }
+
+@media (max-width: 767px) {
+  .page__heading, .section__heading, .my-account__heading,
+  .password-reset__heading, .collections__heading,
+  .course-review__heading { font-size: 28px; }
+  .banner .section__heading { font-size: 32px; }
+  .section__heading--secondary, .card__name { font-size: 20px; }
+  .section__subheading { font-size: 18px; }
+  .section__headings { margin-bottom: 24px; }
+  .banner .section__subheading { margin-top: 24px; }
+  .button, .button-primary, .button-secondary { padding: 12px 24px; }
+  .header__nav-item .button-secondary { padding: 12px 16px; }
+  .kapow-spt .main-section h1.content-text { font-size: 28px; }
+  .kapow-spa .kapow-card-content .card-heading a { font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button, .card, a { transition: none; }
+}
+
+// The base header CTA mixin is more specific than the shared black variant.
+.header .header__nav-cta a.button-secondary {
+  &:hover, &:focus, &:active {
+    background: $mojo-black-hover;
+    color: $mojo-paper;
+    box-shadow: none;
+    transition: none;
+  }
+}

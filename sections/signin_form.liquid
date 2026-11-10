@@ -17,7 +17,7 @@
         value="{{ field.value }}"
         placeholder="{{ field.placeholder }}"
         autocapitalize="off"
-        autocomplete="off"
+        autocomplete="username"
         autocorrect="off"
         spellcheck="false"
         {% if field.required %}
@@ -48,7 +48,7 @@
         name="{{ field.name }}"
         placeholder="{{ field.placeholder }}"
         autocapitalize="off"
-        autocomplete="off"
+        autocomplete="current-password"
         autocorrect="off"
         spellcheck="false"
         {% if field.required %}
@@ -57,6 +57,8 @@
         class="form__control"
         aria-describedby="{{ field.name }}-error"
       />
+
+      <button type="button" class="mojo-password-toggle" aria-controls="{{ field.name }}" aria-pressed="false">Show password</button>
 
       {% if field.required %}
         <p id="{{ field.name }}-error" class="form__error-msg hidden">
@@ -110,7 +112,6 @@
           type="submit"
           value="{{ fields.submit.label }}"
           class="button button-primary"
-          style="background-color: #2222ee !important"
           id="sign-in"
         >
           {{ fields.submit.label }}

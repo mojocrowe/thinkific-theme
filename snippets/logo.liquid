@@ -8,22 +8,16 @@
         class="logo img-responsive"
         loading="lazy"
       >
-      <h1 class="sr-only">
-        {{ site.name }}
-      </h1>
     </a>
   {% else %}
     <a href="{{ site_url }}">
       <img
         src="{{ 'mojo-logo-orange.png' | theme_asset_url }}"
         srcset="{{ 'mojo-logo-orange.png' | theme_asset_url }}?width=384&dpr=1 1x, {{ 'mojo-logo-orange.png' | theme_asset_url }}?width=384&dpr=2 2x, {{ 'mojo-logo-orange.png' | theme_asset_url }}?width=384&dpr=3 3x"
-        alt="Logo"
-        class="logo img-responsive"
+        alt="{{ site.name }}"
+        class="logo logo--default img-responsive"
         loading="lazy"
       >
-      <h1 class="sr-only">
-        {{ site.name }}
-      </h1>
     </a>
   {% endif %}
 </section>
